@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #00ff88;
+    --primary-dark: #00cc6e;
+    --background: #0a0e17;
+    --background-light: #111827;
+    --foreground: #ffffff;
+    --muted: #94a3b8;
+  }
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-white antialiased;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-primary;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background-light;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full;
+    transition: background 0.3s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Card */
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300;
+  }
+
+  .glass-card-hover:hover {
+    @apply bg-white/10 border-primary/30 shadow-glow;
+    transform: translateY(-5px);
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #00ff88, #3b82f6, #8b5cf6);
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+
+  /* Primary Button */
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-background font-semibold rounded-xl;
+    @apply transition-all duration-300 hover:bg-primary-dark hover:shadow-glow;
+    @apply active:scale-95;
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    @apply px-6 py-3 bg-transparent border-2 border-primary text-primary font-semibold rounded-xl;
+    @apply transition-all duration-300 hover:bg-primary/10;
+    @apply active:scale-95;
+  }
+
+  /* Section Heading */
+  .section-heading {
+    @apply text-4xl md:text-5xl font-display font-bold text-center mb-4;
+  }
+
+  .section-subheading {
+    @apply text-lg text-gray-400 text-center max-w-2xl mx-auto mb-12;
+  }
+
+  /* Skill Tag */
+  .skill-tag {
+    @apply px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm;
+    @apply transition-all duration-300 hover:bg-primary/20 hover:border-primary/50;
+  }
+
+  /* Timeline */
+  .timeline-line {
+    @apply absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent;
+  }
+
+  .timeline-dot {
+    @apply absolute left-[-8px] md:left-1/2 md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full;
+    @apply shadow-glow z-10;
+  }
+
+  /* Glow Effect */
+  .glow {
+    @apply shadow-glow;
+  }
+
+  .glow-lg {
+    @apply shadow-glow-lg;
+  }
+
+  /* Underline Animation */
+  .animated-underline {
+    @apply relative;
+  }
+
+  .animated-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .animated-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Project Card */
+  .project-card {
+    @apply glass-card overflow-hidden group cursor-pointer;
+  }
+
+  .project-card-image {
+    @apply relative h-48 md:h-56 overflow-hidden;
+  }
+
+  .project-card-image::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60;
+  }
+
+  .project-card-content {
+    @apply p-6;
+  }
+
+  /* Status Badge */
+  .status-badge {
+    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .status-available {
+    @apply bg-primary/20 text-primary;
+  }
+
+  .status-busy {
+    @apply bg-yellow-500/20 text-yellow-500;
+  }
+
+  /* Loader */
+  .loader {
+    @apply fixed inset-0 z-[9999] flex items-center justify-center bg-background;
+  }
+
+  .loader-spinner {
+    @apply w-16 h-16 border-4 border-primary/20 border-t-primary rounded-full animate-spin;
+  }
+}
+
+@layer utilities {
+  /* Text Gradient Animation */
+  .text-gradient-animate {
+    background: linear-gradient(
+      to right,
+      #00ff88,
+      #3b82f6,
+      #8b5cf6,
+      #00ff88
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-flow 8s ease infinite;
+  }
+
+  @keyframes gradient-flow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Floating Animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  /* Pulse Glow Animation */
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(0, 255, 136, 0.6);
+    }
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
