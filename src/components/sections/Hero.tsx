@@ -1,11 +1,28 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { MapPin, Mail, Calendar, Briefcase, Download, Send, Github, Linkedin } from 'lucide-react'
+import { MapPin, Mail, Calendar, Briefcase, Download, Send, Github, Linkedin, Loader2 } from 'lucide-react'
+import Image from 'next/image'
+import { useState } from 'react'
 import { personalInfo, stats } from '@/lib/data'
 import { Button, AnimatedCounter, Card } from '@/components/ui'
 
 export default function Hero() {
+  const [downloading, setDownloading] = useState(false)
+
+  const handleDownloadCV = async () => {
+    if (downloading) return
+    setDownloading(true)
+    try {
+      const { downloadCV } = await import('@/lib/downloadCV')
+      await downloadCV()
+    } catch {
+      // silent
+    } finally {
+      setDownloading(false)
+    }
+  }
+
   return (
     <section
       id="home"
@@ -30,16 +47,21 @@ export default function Hero() {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
-                  className="relative"
+                  className="relative flex-shrink-0"
                 >
-                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-primary to-accent-blue p-1">
-                    <div className="w-full h-full rounded-full bg-background-light flex items-center justify-center">
-                      <span className="text-4xl md:text-5xl font-display font-bold gradient-text">
-                        MHA
-                      </span>
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-primary to-accent-blue p-[3px]">
+                    <div className="w-full h-full rounded-full overflow-hidden bg-background-light">
+                      <Image
+                        src="/profile_image.jpeg"
+                        alt="Muhammad Haris Arain"
+                        width={160}
+                        height={160}
+                        className="w-full h-full object-cover object-top"
+                        priority
+                      />
                     </div>
                   </div>
-                  {/* Status Indicator */}
+                  {/* Online indicator */}
                   <motion.div
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
@@ -154,16 +176,24 @@ export default function Hero() {
                     transition={{ delay: 1 }}
                     className="flex flex-wrap gap-4"
                   >
-                    <Button variant="primary" size="lg">
-                      <Download size={18} />
-                      Download CV
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      onClick={handleDownloadCV}
+                      disabled={downloading}
+                      className={downloading ? 'cursor-wait opacity-80' : ''}
+                    >
+                      {downloading
+                        ? <Loader2 size={18} className="animate-spin" />
+                        : <Download size={18} />
+                      }
+                      {downloading ? 'Preparing CV…' : 'Download CV'}
                     </Button>
                     <Button
                       variant="secondary"
                       size="lg"
                       onClick={() => {
-                        const element = document.querySelector('#contact')
-                        element?.scrollIntoView({ behavior: 'smooth' })
+                        document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
                       }}
                     >
                       <Send size={18} />
