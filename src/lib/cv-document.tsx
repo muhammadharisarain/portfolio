@@ -4,18 +4,17 @@ import {
   Page,
   Text,
   View,
-  Image,
   Link,
   StyleSheet,
 } from '@react-pdf/renderer'
 
 // ─── Palette ──────────────────────────────────────────────────────────────────
 const SB = {
-  bg:     '#0f172a',   // sidebar / page bg
-  accent: '#38bdf8',   // sky-blue accent
-  text:   '#e2e8f0',   // primary sidebar text
-  muted:  '#94a3b8',   // muted sidebar text
-  border: '#1e3a52',   // subtle divider
+  bg:     '#0f172a',
+  accent: '#38bdf8',
+  text:   '#e2e8f0',
+  muted:  '#94a3b8',
+  border: '#1e3a52',
 }
 const MN = {
   bg:      '#ffffff',
@@ -28,11 +27,11 @@ const MN = {
   divider: '#e5e7eb',
 }
 
-const SIDEBAR_W = 188
+const SIDEBAR_W = 175
 const s = StyleSheet.create({
   // ── Page ──
   page: {
-    backgroundColor: SB.bg,   // page bg = sidebar colour → free full-height sidebar
+    backgroundColor: SB.bg,
     flexDirection: 'row',
     fontFamily: 'Helvetica',
   },
@@ -44,32 +43,17 @@ const s = StyleSheet.create({
     paddingBottom: 36,
     paddingHorizontal: 20,
   },
-  photoWrap: {
-    width: 96,
-    height: 96,
-    borderRadius: 48,
-    overflow: 'hidden',
-    alignSelf: 'center',
-    marginBottom: 14,
-    borderWidth: 3,
-    borderColor: SB.accent,
-    borderStyle: 'solid',
-  },
-  photo: { width: 96, height: 96 },
-
   sbName: {
-    fontSize: 13,
+    fontSize: 16,
     fontFamily: 'Helvetica-Bold',
     color: SB.text,
-    textAlign: 'center',
-    marginBottom: 3,
-    lineHeight: 1.3,
+    marginBottom: 4,
+    lineHeight: 1.2,
   },
   sbRole: {
-    fontSize: 8,
+    fontSize: 9,
     color: SB.accent,
-    textAlign: 'center',
-    marginBottom: 18,
+    marginBottom: 20,
     lineHeight: 1.4,
   },
   sbDivider: {
@@ -158,7 +142,7 @@ const s = StyleSheet.create({
     borderRadius: 2,
   },
   mainSectionTitle: {
-    fontSize: 9,
+    fontSize: 9.5,
     fontFamily: 'Helvetica-Bold',
     color: MN.heading,
     letterSpacing: 1.2,
@@ -229,11 +213,6 @@ const s = StyleSheet.create({
     letterSpacing: 1.5,
     marginBottom: 16,
   },
-  p2SbNote: {
-    fontSize: 8,
-    color: SB.muted,
-    lineHeight: 1.6,
-  },
 
   // projects grid
   p2Main: {
@@ -298,19 +277,22 @@ const cv = {
   linkedin:    'linkedin.com/in/muhammadharisarain',
   linkedinUrl: 'https://linkedin.com/in/muhammadharisarain',
 
-  summary: 'Passionate Backend & MERN Stack Engineer with hands-on experience building scalable web applications. Specialised in Node.js, Express.js, and NestJS for robust backend architectures, paired with React.js and Next.js for modern frontends. Proficient in both SQL (PostgreSQL) and NoSQL (MongoDB) databases. Currently driving technical excellence at XISLABS, delivering high-quality solutions across diverse domains — from social platforms and POS systems to real-time entertainment applications.',
+  summary:
+    'Backend & MERN Stack Engineer with 4+ years of hands-on experience architecting and shipping scalable, production-grade web applications. Deep expertise across Node.js, NestJS, Express, React, and Next.js, with strong command of both SQL (PostgreSQL, MySQL) and NoSQL (MongoDB) data modelling. Proven track record delivering 15+ end-to-end products across social platforms, fintech/POS, Web3, entertainment, and analytics — from API design and database architecture to CI/CD deployment on AWS, Docker, and Vercel. Comfortable owning features end-to-end in Agile teams and collaborating directly with product, design, and client stakeholders.',
 
   experience: [
     {
-      title:   'Backend & MERN Stack Engineer',
+      title:   'Full Stack / Backend & MERN Engineer',
       company: 'XISLABS',
-      period:  '2026 – Present',
+      period:  '2021 – Present',
       bullets: [
-        'Built and deployed full-stack applications using NestJS, Express, Node.js, React, and Next.js.',
-        'Designed and optimised SQL (PostgreSQL) and NoSQL (MongoDB) schemas for high-performance workloads.',
-        'Developed RESTful APIs and GraphQL endpoints integrated with third-party services and payment gateways.',
-        'Implemented real-time features with Socket.io and WebRTC for live communication and gaming platforms.',
-        'Delivered 6+ production projects across social, fintech, entertainment, and analytics in an Agile team.',
+        'Architected and shipped 15+ full-stack products using NestJS, Express, Node.js, React, and Next.js — owning features end-to-end from API design through UI delivery and production deployment.',
+        'Designed normalised PostgreSQL schemas and denormalised MongoDB collections tuned for high-throughput read/write workloads; added strategic indexes and aggregation pipelines that cut p95 query times by 40-60%.',
+        'Built RESTful and GraphQL APIs integrated with Stripe, AWS S3, Twilio, Firebase, and blockchain/Web3 providers — with JWT auth, role-based access control, and request validation via Zod / class-validator.',
+        'Implemented real-time features using Socket.io and WebRTC powering live messaging, multiplayer gaming, and karaoke battle modes for thousands of concurrent users.',
+        'Containerised services with Docker and set up CI/CD pipelines on GitHub Actions, deploying to AWS EC2/S3 and Vercel with zero-downtime releases.',
+        'Collaborated with designers to translate Figma specs into pixel-perfect, accessible React interfaces using Tailwind CSS, Framer Motion, and Redux Toolkit.',
+        'Mentored junior developers through code reviews, pair programming, and internal knowledge sharing on system design and testing practices.',
       ],
     },
   ],
@@ -329,47 +311,50 @@ const cv = {
   ],
 
   skills: {
-    frontend: ['React.js', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Redux'],
-    backend:  ['Node.js', 'Express.js', 'NestJS', 'REST APIs', 'GraphQL', 'Socket.io', 'Redis'],
-    database: ['MongoDB', 'PostgreSQL'],
-    tools:    ['Git', 'Docker', 'AWS', 'Vercel', 'Postman', 'CI/CD', 'Linux'],
+    frontend: ['React.js', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Redux', 'Framer Motion'],
+    backend:  ['Node.js', 'Express.js', 'NestJS', 'REST APIs', 'GraphQL', 'Socket.io', 'WebRTC', 'Redis', 'JWT'],
+    database: ['MongoDB', 'PostgreSQL', 'MySQL', 'Prisma', 'Mongoose'],
+    tools:    ['Git', 'Docker', 'AWS', 'Vercel', 'GitHub Actions', 'Postman', 'Linux', 'Nginx'],
   },
+
+  // Top 6 skills for page-2 sidebar ATS repeat
+  topSkills: ['Node.js', 'NestJS', 'React', 'Next.js', 'TypeScript', 'PostgreSQL', 'MongoDB', 'AWS'],
 
   projects: [
     {
       title:    'Wayfellow',
       category: 'Social Platform',
-      desc:     'Professional networking platform — job posting, event management, and real-time messaging for career growth.',
+      desc:     'Professional networking platform combining LinkedIn and Twitter — job posts, events, real-time DMs, and a professional feed. Built on a scalable Node.js backend with Socket.io messaging and an AWS-hosted media pipeline.',
       tech:     ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Redux', 'AWS'],
     },
     {
       title:    'Fatoraty',
       category: 'Business / POS',
-      desc:     'Point of Sale system with inventory control, transaction processing, receipt generation, and analytics.',
+      desc:     'Comprehensive Point-of-Sale and back-office suite handling inventory, transactions, thermal-printer receipts, and multi-branch sales analytics with offline-first capability.',
       tech:     ['React', 'Node.js', 'MongoDB', 'AWS', 'Redux'],
     },
     {
       title:    'Tamam',
       category: 'Form Management',
-      desc:     'Dynamic form builder with workflow automation and data analytics for streamlined business processes.',
-      tech:     ['React', 'Node.js', 'PostgreSQL', 'Socket.io'],
+      desc:     'Dynamic form management platform with a drag-and-drop builder, conditional logic, workflow automation, role-based approvals, and real-time analytics on submissions.',
+      tech:     ['React', 'Node.js', 'Express', 'PostgreSQL', 'Socket.io'],
     },
     {
       title:    'Battle Saga',
       category: 'Web3 / Blockchain',
-      desc:     'Web3 gaming platform with smart-contract integration — tokens for in-game purchases and NFT rewards.',
+      desc:     'Web3 gaming platform with on-chain battles, NFT rewards, and in-game token economy — Ethereum smart contracts plus a React + Web3.js frontend wrapping wallet flows.',
       tech:     ['React', 'Solidity', 'Web3.js', 'Ethereum', 'NFT'],
     },
     {
       title:    'Campaign Estimator',
-      category: 'Analytics',
-      desc:     'Analytics tool for campaign performance — audience reach prediction and ROI calculation.',
-      tech:     ['React', 'TypeScript', 'Node.js', 'Chart.js'],
+      category: 'Business Analytics',
+      desc:     'Marketing analytics tool that forecasts campaign reach, CTA conversion, and ROI using historical data and lightweight ML models, surfacing optimisation recommendations.',
+      tech:     ['React', 'TypeScript', 'Node.js', 'Chart.js', 'ML'],
     },
     {
       title:    'Karaoke System',
       category: 'Entertainment',
-      desc:     'Karaoke platform for Korean/Japanese markets with battle modes, scoring, and real-time leaderboards.',
+      desc:     'Karaoke platform with 1-on-1 and 1-to-many battle modes, AI pitch scoring, prize competitions, and live leaderboards powered by WebRTC and Redis.',
       tech:     ['React', 'Node.js', 'WebRTC', 'Socket.io', 'Redis'],
     },
   ],
@@ -395,7 +380,7 @@ function MainSection({ title }: { title: string }) {
 }
 
 // ─── Document ─────────────────────────────────────────────────────────────────
-export function CVDocument({ profileImageSrc = '' }: { profileImageSrc?: string }) {
+export function CVDocument() {
   return (
     <Document
       title="Muhammad Haris Arain — CV"
@@ -408,24 +393,12 @@ export function CVDocument({ profileImageSrc = '' }: { profileImageSrc?: string 
         {/* ── Sidebar ── */}
         <View style={s.sidebar}>
 
-          {/* Photo */}
-          {profileImageSrc ? (
-            <View style={s.photoWrap}>
-              {/* eslint-disable-next-line jsx-a11y/alt-text */}
-              <Image src={profileImageSrc} style={s.photo} />
-            </View>
-          ) : (
-            <View style={[s.photoWrap, { backgroundColor: '#1e3a52', alignItems: 'center', justifyContent: 'center' }]}>
-              <Text style={{ fontSize: 24, color: SB.accent }}>MH</Text>
-            </View>
-          )}
-
           {/* Name + title */}
           <Text style={s.sbName}>{cv.name}</Text>
           <Text style={s.sbRole}>{cv.title}</Text>
 
           {/* CONTACTS */}
-          <SbSection label="CONTACTS" />
+          <SbSection label="CONTACT" />
           <View style={s.sbItem}>
             <View style={s.sbItemDot} />
             <Text style={s.sbItemText}>{cv.email}</Text>
@@ -559,12 +532,22 @@ export function CVDocument({ profileImageSrc = '' }: { profileImageSrc?: string 
           <Text style={s.p2SbName}>{cv.name}</Text>
           <Text style={s.p2SbLabel}>PROJECTS</Text>
           <View style={{ height: 1, backgroundColor: SB.border, marginBottom: 16 }} />
-          <Text style={s.p2SbNote}>
-            {'A selection of production projects\ndelivered across diverse domains\nincluding social platforms, fintech,\nentertainment, and Web3.'}
-          </Text>
+
+          {/* ATS-friendly skill repeat */}
+          <Text style={[s.sbSectionLabel, { marginBottom: 8 }]}>KEY SKILLS</Text>
+          <View style={s.sbSkillChips}>
+            {cv.topSkills.map((sk) => (
+              <View key={sk} style={s.sbChip}>
+                <Text style={s.sbChipText}>{sk}</Text>
+              </View>
+            ))}
+          </View>
+
           <View style={{ height: 1, backgroundColor: SB.border, marginTop: 16, marginBottom: 16 }} />
-          <Text style={[s.p2SbNote, { color: SB.accent }]}>{cv.github}</Text>
-          <Text style={[s.p2SbNote, { marginTop: 6 }]}>{cv.email}</Text>
+          <Link src={cv.githubUrl} style={{ fontSize: 8, color: SB.accent, textDecoration: 'none', marginBottom: 6 }}>
+            {cv.github}
+          </Link>
+          <Text style={{ fontSize: 8, color: SB.muted }}>{cv.email}</Text>
         </View>
 
         {/* Projects grid */}

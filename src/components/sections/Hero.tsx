@@ -32,6 +32,20 @@ export default function Hero() {
       <div className="absolute inset-0 bg-hero-gradient" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,136,0.1),transparent_50%)]" />
 
+      {/* Floating ambient orbs */}
+      <motion.div
+        aria-hidden
+        animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
+        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+        className="pointer-events-none absolute top-1/4 -left-20 w-72 h-72 rounded-full bg-primary/10 blur-3xl"
+      />
+      <motion.div
+        aria-hidden
+        animate={{ x: [0, -30, 0], y: [0, 20, 0] }}
+        transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+        className="pointer-events-none absolute bottom-1/4 -right-20 w-96 h-96 rounded-full bg-accent-purple/10 blur-3xl"
+      />
+
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Profile Card */}
@@ -89,7 +103,9 @@ export default function Hero() {
                     transition={{ delay: 0.5 }}
                     className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-2"
                   >
-                    {personalInfo.name}
+                    <span className="bg-gradient-to-r from-white via-primary to-accent-blue bg-clip-text text-transparent">
+                      {personalInfo.name}
+                    </span>
                   </motion.h1>
 
                   <motion.h2

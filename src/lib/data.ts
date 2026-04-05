@@ -1,4 +1,4 @@
-import { Code2, Server, Wrench } from 'lucide-react'
+import { Code2, Server, Wrench, Database, Cloud } from 'lucide-react'
 
 export const personalInfo = {
   name: 'Muhammad Haris Arain',
@@ -24,59 +24,100 @@ export const stats = [
 ]
 
 export const aboutParagraphs = [
-  "I'm a passionate Full Stack Developer with over 4 years of experience in building robust web applications. My expertise lies in the MERN stack (MongoDB, Express.js, React.js, Node.js), complemented by strong skills in NestJS and TypeScript for building scalable backend architectures.",
-  "Throughout my career, I've had the privilege of working on diverse projects ranging from Point of Sale systems to complex form management platforms. I believe in writing clean, maintainable code and following best practices that ensure long-term project success.",
-  "My approach combines technical excellence with a deep understanding of business needs. I specialize in creating full-stack solutions that not only meet current requirements but are also designed to scale with your growing business.",
-  "When I'm not coding, I'm exploring new technologies, contributing to open-source projects, and staying updated with the latest trends in web development. I'm always excited to take on new challenges and transform innovative ideas into reality.",
+  "I'm a passionate Full Stack Developer with over 4 years of experience architecting and shipping production-grade web applications. My core expertise is the MERN stack (MongoDB, Express.js, React.js, Node.js), complemented by strong command of NestJS, Next.js, and TypeScript for building scalable, type-safe systems from the ground up.",
+  "I've led end-to-end delivery on diverse products — from Point-of-Sale systems processing live transactions, to real-time social platforms, Web3 gaming dApps, and dynamic form management suites. I believe in writing clean, modular, and maintainable code, guided by SOLID principles, thoughtful testing, and code-review discipline.",
+  "My engineering approach combines technical depth with a strong sense of product and business context. I specialize in designing solutions that solve the immediate need while being structured to scale — clean REST and GraphQL APIs, well-modeled SQL and NoSQL data layers, real-time communication with Socket.io and WebRTC, and deployment pipelines built on AWS, Docker, and CI/CD.",
+  "When I'm not coding, I'm exploring new technologies, contributing to open-source, and sharpening my craft around system design, performance, and developer experience. I'm always excited to partner with teams that value quality, collaboration, and turning ambitious ideas into reliable products.",
 ]
 
-export const skillCategories = [
+// Each skill: name, simpleicons slug, brand color (hex, no #), proficiency 0-100
+export type Skill = {
+  name: string
+  slug: string
+  color: string
+  level: number
+}
+
+export const skillCategories: {
+  title: string
+  icon: typeof Code2
+  color: string
+  accent: string
+  skills: Skill[]
+}[] = [
   {
     title: 'Frontend Development',
     icon: Code2,
     color: 'from-blue-500 to-cyan-500',
+    accent: '#3b82f6',
     skills: [
-      'React.js',
-      'Next.js',
-      'JavaScript',
-      'TypeScript',
-      'HTML5',
-      'CSS3',
-      'Tailwind CSS',
-      'Redux',
-      'Framer Motion',
+      { name: 'React.js',       slug: 'react',        color: '61DAFB', level: 95 },
+      { name: 'Next.js',        slug: 'nextdotjs',    color: 'FFFFFF', level: 92 },
+      { name: 'TypeScript',     slug: 'typescript',   color: '3178C6', level: 90 },
+      { name: 'JavaScript',     slug: 'javascript',   color: 'F7DF1E', level: 95 },
+      { name: 'Tailwind CSS',   slug: 'tailwindcss',  color: '06B6D4', level: 93 },
+      { name: 'Redux',          slug: 'redux',        color: '764ABC', level: 88 },
+      { name: 'HTML5',          slug: 'html5',        color: 'E34F26', level: 98 },
+      { name: 'CSS3',           slug: 'css3',         color: '1572B6', level: 95 },
+      { name: 'Framer Motion',  slug: 'framer',       color: '0055FF', level: 85 },
     ],
   },
   {
     title: 'Backend Development',
     icon: Server,
     color: 'from-green-500 to-emerald-500',
+    accent: '#10b981',
     skills: [
-      'Node.js',
-      'Express.js',
-      'NestJS',
-      'MongoDB',
-      'PostgreSQL',
-      'REST APIs',
-      'GraphQL',
-      'Socket.io',
-      'Redis',
+      { name: 'Node.js',        slug: 'nodedotjs',    color: '339933', level: 94 },
+      { name: 'Express.js',     slug: 'express',      color: 'FFFFFF', level: 92 },
+      { name: 'NestJS',         slug: 'nestjs',       color: 'E0234E', level: 88 },
+      { name: 'REST APIs',      slug: 'fastapi',      color: '009688', level: 95 },
+      { name: 'GraphQL',        slug: 'graphql',      color: 'E10098', level: 82 },
+      { name: 'Socket.io',      slug: 'socketdotio',  color: 'FFFFFF', level: 88 },
+      { name: 'Redis',          slug: 'redis',        color: 'DC382D', level: 80 },
+      { name: 'JWT',            slug: 'jsonwebtokens',color: '000000', level: 90 },
     ],
   },
   {
-    title: 'Tools & Technologies',
-    icon: Wrench,
-    color: 'from-purple-500 to-pink-500',
+    title: 'Databases',
+    icon: Database,
+    color: 'from-amber-500 to-orange-500',
+    accent: '#f59e0b',
     skills: [
-      'Git',
-      'GitHub',
-      'Docker',
-      'AWS',
-      'Azure',
-      'Vercel',
-      'CI/CD',
-      'Linux',
-      'Postman',
+      { name: 'MongoDB',        slug: 'mongodb',      color: '47A248', level: 92 },
+      { name: 'PostgreSQL',     slug: 'postgresql',   color: '4169E1', level: 88 },
+      { name: 'MySQL',          slug: 'mysql',        color: '4479A1', level: 85 },
+      { name: 'Prisma',         slug: 'prisma',       color: 'FFFFFF', level: 84 },
+      { name: 'Mongoose',       slug: 'mongoose',     color: '880000', level: 90 },
+      { name: 'Firebase',       slug: 'firebase',     color: 'FFCA28', level: 82 },
+    ],
+  },
+  {
+    title: 'DevOps & Cloud',
+    icon: Cloud,
+    color: 'from-purple-500 to-pink-500',
+    accent: '#a855f7',
+    skills: [
+      { name: 'Docker',         slug: 'docker',       color: '2496ED', level: 85 },
+      { name: 'AWS',            slug: 'amazonaws',    color: 'FF9900', level: 82 },
+      { name: 'Vercel',         slug: 'vercel',       color: 'FFFFFF', level: 92 },
+      { name: 'GitHub Actions', slug: 'githubactions',color: '2088FF', level: 85 },
+      { name: 'Nginx',          slug: 'nginx',        color: '009639', level: 78 },
+      { name: 'Linux',          slug: 'linux',        color: 'FCC624', level: 85 },
+    ],
+  },
+  {
+    title: 'Tools & Workflow',
+    icon: Wrench,
+    color: 'from-rose-500 to-red-500',
+    accent: '#f43f5e',
+    skills: [
+      { name: 'Git',            slug: 'git',          color: 'F05032', level: 95 },
+      { name: 'GitHub',         slug: 'github',       color: 'FFFFFF', level: 95 },
+      { name: 'Postman',        slug: 'postman',      color: 'FF6C37', level: 92 },
+      { name: 'VS Code',        slug: 'visualstudiocode', color: '007ACC', level: 98 },
+      { name: 'Jira',           slug: 'jira',         color: '0052CC', level: 85 },
+      { name: 'Figma',          slug: 'figma',        color: 'F24E1E', level: 78 },
     ],
   },
 ]
@@ -86,11 +127,16 @@ export const experiences = [
     title: 'Full Stack Developer',
     company: 'XISLABS',
     period: '2021 - Present',
-    description: 'Developed and maintained multiple web applications for clients across various industries. Focused on React.js frontend development and Node.js backend services.',
+    description:
+      'Leading full-stack development on production web platforms for clients across fintech, social, entertainment, and Web3. Own features end-to-end — from architecture and API design, through React/Next.js interfaces, to deployment and monitoring.',
     achievements: [
-      'Built 15+ client projects from concept to deployment',
-      'Integrated third-party APIs and payment gateways',
-      'Collaborated with design team to implement pixel-perfect UIs',
+      'Shipped 15+ client projects from concept to production, including POS, social, and Web3 applications',
+      'Architected REST & GraphQL APIs in Node.js, Express, and NestJS serving millions of requests',
+      'Designed relational (PostgreSQL) and document (MongoDB) schemas tuned for high-throughput workloads',
+      'Built real-time features using Socket.io and WebRTC for live messaging, gaming, and karaoke platforms',
+      'Integrated third-party services — Stripe, AWS S3, Twilio, Firebase, and blockchain/Web3 providers',
+      'Partnered with designers to translate Figma specs into pixel-perfect, accessible React interfaces',
+      'Set up CI/CD pipelines on GitHub Actions with Dockerized deployments to AWS and Vercel',
     ],
   },
 ]
@@ -98,7 +144,8 @@ export const experiences = [
 export const projects = [
   {
     title: 'Wayfellow',
-    description: 'A professional networking platform combining the best features of LinkedIn and Twitter. Includes job posting, event management, professional networking, and real-time messaging for career growth and community building.',
+    description:
+      'Professional networking platform combining the best of LinkedIn and Twitter — job posts, event management, real-time DMs, and a professional feed. Built on a scalable Node.js backend with Socket.io-powered messaging and an AWS-hosted media pipeline.',
     image: '/wayfellow.svg',
     tags: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Redux', 'AWS'],
     category: 'Social Platform',
@@ -108,7 +155,8 @@ export const projects = [
   },
   {
     title: 'Fatoraty',
-    description: 'A comprehensive Point of Sale and back-office management system. Enables businesses to manage inventory, process transactions, generate receipts, and analyze sales data with intuitive dashboards.',
+    description:
+      'Comprehensive Point-of-Sale and back-office system for retail and F&B. Handles inventory, transactions, receipts with thermal-printer support, and sales analytics — with offline-first capability and multi-branch reporting dashboards.',
     image: '/fatoraty.png',
     tags: ['React', 'Node.js', 'MongoDB', 'AWS', 'Redux', 'Thermal Printing'],
     category: 'Business Solution',
@@ -118,7 +166,8 @@ export const projects = [
   },
   {
     title: 'Tamam',
-    description: 'A sophisticated form management application that provides customers with form-based services. Features dynamic form builder, workflow automation, and data analytics for streamlined business processes.',
+    description:
+      'Sophisticated form management platform delivering customer-facing services through dynamic, conditional forms. Includes a drag-and-drop form builder, workflow automation, role-based approvals, and real-time analytics on submissions.',
     image: '/tamam.png',
     tags: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Socket.io'],
     category: 'Form Management',
@@ -128,7 +177,8 @@ export const projects = [
   },
   {
     title: 'Battle Saga',
-    description: 'An innovative Web3 gaming platform with smart contract integration. Players use cryptocurrency tokens for in-game purchases, battles, and rewards in an immersive gaming ecosystem.',
+    description:
+      'Web3 gaming platform with on-chain battles, NFT-based rewards, and in-game token economy. Smart contracts on Ethereum handle matchmaking and payouts, with a React + Web3.js frontend wrapping wallet connections and live battle state.',
     image: '/battle-saga.svg',
     tags: ['React', 'Solidity', 'Web3.js', 'Ethereum', 'NFT', 'Smart Contracts'],
     category: 'Web3 / Blockchain',
@@ -138,7 +188,8 @@ export const projects = [
   },
   {
     title: 'Campaign Estimator',
-    description: 'A business analytics application that helps marketers estimate campaign performance. Features CTA optimization, audience reach prediction, ROI calculation, and data-driven insights for marketing success.',
+    description:
+      'Business analytics tool that helps marketing teams estimate campaign reach, CTA conversion, and ROI before launch. Combines historical data with lightweight ML models to forecast performance and surface optimisation recommendations.',
     image: '/campaign-estimator.png',
     tags: ['React', 'TypeScript', 'Node.js', 'Chart.js', 'ML', 'Analytics'],
     category: 'Business Analytics',
@@ -148,7 +199,8 @@ export const projects = [
   },
   {
     title: 'Karaoke System',
-    description: 'A feature-rich karaoke platform popular in Korean and Japanese markets. Includes one-to-one and one-to-many battle modes, song perfection scoring, prize competitions, and real-time leaderboards.',
+    description:
+      'Feature-rich karaoke platform popular in Korean and Japanese markets. Supports 1-on-1 and 1-to-many battle modes, AI-driven pitch/perfection scoring, weekly prize competitions, and live leaderboards powered by WebRTC and Redis.',
     image: '/karaoke.svg',
     tags: ['React', 'Node.js', 'WebRTC', 'Socket.io', 'Audio API', 'Redis'],
     category: 'Entertainment',

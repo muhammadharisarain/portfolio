@@ -3,10 +3,10 @@
 import { PDFDownloadLink } from '@react-pdf/renderer'
 import { CVDocument } from '@/lib/cv-document'
 
-export function CVDownloadButton({ profileImageSrc }: { profileImageSrc: string }) {
+export function CVDownloadButton() {
   return (
     <PDFDownloadLink
-      document={<CVDocument profileImageSrc={profileImageSrc} />}
+      document={<CVDocument />}
       fileName="Muhammad-Haris-Arain-CV.pdf"
       style={{ textDecoration: 'none' }}
     >
