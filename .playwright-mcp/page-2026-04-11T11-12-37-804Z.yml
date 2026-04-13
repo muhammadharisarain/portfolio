@@ -1,0 +1,123 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - link "← Portfolio" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e5]: Muhammad Haris Arain — CV
+    - generic [ref=e6]:
+      - button "🖨 Print" [ref=e7] [cursor=pointer]
+      - button "↓ Download PDF" [ref=e8] [cursor=pointer]
+  - generic [ref=e10]:
+    - generic [ref=e11]:
+      - img "Muhammad Haris Arain" [ref=e13]
+      - generic [ref=e14]:
+        - heading "Muhammad Haris Arain" [level=1] [ref=e15]
+        - paragraph [ref=e16]: Backend & MERN Stack Engineer
+        - generic [ref=e17]:
+          - link "harisarain704@gmail.com" [ref=e18] [cursor=pointer]:
+            - /url: mailto:harisarain704@gmail.com
+            - img [ref=e19]
+            - text: harisarain704@gmail.com
+          - generic [ref=e22]:
+            - img [ref=e23]
+            - text: Lahore, Pakistan
+          - link "github.com/muhammadharisarain" [ref=e26] [cursor=pointer]:
+            - /url: https://github.com/muhammadharisarain
+            - img [ref=e27]
+            - text: github.com/muhammadharisarain
+          - link "linkedin.com/in/muhammadharisarain" [ref=e29] [cursor=pointer]:
+            - /url: https://linkedin.com/in/muhammadharisarain
+            - img [ref=e30]
+            - text: linkedin.com/in/muhammadharisarain
+    - generic [ref=e32]:
+      - generic [ref=e33]:
+        - generic [ref=e34]: Professional Summary
+        - paragraph [ref=e35]: Passionate Backend & MERN Stack Engineer with hands-on experience building scalable web applications. Specialised in Node.js, Express.js, and NestJS for robust backend architectures, paired with React.js and Next.js for modern frontends. Proficient in both SQL (PostgreSQL) and NoSQL (MongoDB) databases. Currently driving technical excellence at XISLABS, delivering high-quality solutions across diverse domains — from social platforms and POS systems to real-time entertainment applications.
+      - generic [ref=e36]:
+        - generic [ref=e37]: Work Experience
+        - generic [ref=e38]:
+          - generic [ref=e39]:
+            - generic [ref=e40]: Backend & MERN Stack Engineer
+            - generic [ref=e41]: 2026 – Present
+          - generic [ref=e42]: XISLABS
+          - list [ref=e43]:
+            - listitem [ref=e44]:
+              - generic [ref=e45]: ›
+              - generic [ref=e46]: Built and deployed full-stack applications using NestJS, Express, Node.js, React, and Next.js.
+            - listitem [ref=e47]:
+              - generic [ref=e48]: ›
+              - generic [ref=e49]: Designed and optimised SQL (PostgreSQL) and NoSQL (MongoDB) database schemas for high-performance workloads.
+            - listitem [ref=e50]:
+              - generic [ref=e51]: ›
+              - generic [ref=e52]: Developed RESTful APIs and GraphQL endpoints integrated with third-party services and payment gateways.
+            - listitem [ref=e53]:
+              - generic [ref=e54]: ›
+              - generic [ref=e55]: Implemented real-time features with Socket.io and WebRTC for live communication and gaming platforms.
+            - listitem [ref=e56]:
+              - generic [ref=e57]: ›
+              - generic [ref=e58]: Delivered 6+ production projects across social, fintech, entertainment, and analytics domains in an Agile team.
+      - generic [ref=e59]:
+        - generic [ref=e60]: Education
+        - generic [ref=e61]:
+          - generic [ref=e62]:
+            - generic [ref=e63]: Bachelor's in Computer Science (BS-CS)
+            - generic [ref=e64]: 2022 – 2026
+          - generic [ref=e65]: Virtual University of Pakistan
+        - generic [ref=e66]:
+          - generic [ref=e67]:
+            - generic [ref=e68]: Intermediate — Pre-Engineering (FSc)
+            - generic [ref=e69]: Completed 2022
+          - generic [ref=e70]: Superior College of Science, Hyderabad
+      - generic [ref=e71]:
+        - generic [ref=e72]: Technical Skills
+        - generic [ref=e73]:
+          - generic [ref=e74]: Frontend
+          - generic [ref=e75]: React.js, Next.js, JavaScript, TypeScript, HTML5, CSS3, Tailwind CSS, Redux
+        - generic [ref=e76]:
+          - generic [ref=e77]: Backend
+          - generic [ref=e78]: Node.js, Express.js, NestJS, MongoDB, PostgreSQL, REST APIs, GraphQL, Socket.io, Redis
+        - generic [ref=e79]:
+          - generic [ref=e80]: Tools
+          - generic [ref=e81]: Git, GitHub, Docker, AWS, Vercel, Postman, CI/CD, Linux
+      - generic [ref=e83]:
+        - generic [ref=e84]: Muhammad Haris Arain
+        - generic [ref=e85]: Projects
+      - generic [ref=e86]:
+        - generic [ref=e87]: Projects
+        - generic [ref=e88]:
+          - generic [ref=e89]:
+            - generic [ref=e90]:
+              - generic [ref=e91]: Wayfellow
+              - generic [ref=e92]: Social Platform
+            - paragraph [ref=e93]: Professional networking platform combining LinkedIn & Twitter features — job posting, event management, and real-time messaging for career growth.
+            - generic [ref=e94]: "Tech: React, Node.js, MongoDB, Socket.io, Redux, AWS"
+          - generic [ref=e95]:
+            - generic [ref=e96]:
+              - generic [ref=e97]: Fatoraty
+              - generic [ref=e98]: Business / POS
+            - paragraph [ref=e99]: Comprehensive Point of Sale and back-office management system with inventory control, transaction processing, receipt generation, and analytics.
+            - generic [ref=e100]: "Tech: React, Node.js, MongoDB, AWS, Redux, Thermal Printing"
+          - generic [ref=e101]:
+            - generic [ref=e102]:
+              - generic [ref=e103]: Tamam
+              - generic [ref=e104]: Form Management
+            - paragraph [ref=e105]: Sophisticated dynamic form builder with workflow automation and data analytics for streamlined business processes.
+            - generic [ref=e106]: "Tech: React, Node.js, Express, PostgreSQL, Socket.io"
+          - generic [ref=e107]:
+            - generic [ref=e108]:
+              - generic [ref=e109]: Battle Saga
+              - generic [ref=e110]: Web3 / Blockchain
+            - paragraph [ref=e111]: Web3 gaming platform with smart-contract integration — cryptocurrency tokens for in-game purchases, battles, and NFT rewards.
+            - generic [ref=e112]: "Tech: React, Solidity, Web3.js, Ethereum, NFT, Smart Contracts"
+          - generic [ref=e113]:
+            - generic [ref=e114]:
+              - generic [ref=e115]: Campaign Estimator
+              - generic [ref=e116]: Business Analytics
+            - paragraph [ref=e117]: Analytics tool for marketers to estimate campaign performance with CTA optimisation, audience reach prediction, and ROI calculation.
+            - generic [ref=e118]: "Tech: React, TypeScript, Node.js, Chart.js"
+          - generic [ref=e119]:
+            - generic [ref=e120]:
+              - generic [ref=e121]: Karaoke System
+              - generic [ref=e122]: Entertainment
+            - paragraph [ref=e123]: Feature-rich karaoke platform for Korean/Japanese markets with battle modes, song scoring, prize competitions, and real-time leaderboards.
+            - generic [ref=e124]: "Tech: React, Node.js, WebRTC, Socket.io, Audio API, Redis"

@@ -8,114 +8,117 @@ import {
   StyleSheet,
 } from '@react-pdf/renderer'
 
-// ─── Palette ──────────────────────────────────────────────────────────────────
+// ─── Palette — ATS-safe: light sidebar, dark text everywhere ─────────────────
+const ACCENT = '#0284c7' // single primary accent (sky-600)
 const SB = {
-  bg:     '#0f172a',
-  accent: '#38bdf8',
-  text:   '#e2e8f0',
-  muted:  '#94a3b8',
-  border: '#1e3a52',
+  bg:      '#f1f5f9', // slate-100 — light, ATS-readable
+  heading: '#0f172a',
+  text:    '#334155',
+  muted:   '#64748b',
+  accent:  ACCENT,
+  divider: '#cbd5e1',
 }
 const MN = {
   bg:      '#ffffff',
   heading: '#0f172a',
   body:    '#374151',
   muted:   '#6b7280',
-  company: '#2563eb',
+  accent:  ACCENT,
   tag:     '#f1f5f9',
   tagText: '#475569',
-  divider: '#e5e7eb',
+  divider: '#e2e8f0',
 }
 
-const SIDEBAR_W = 175
+const SIDEBAR_W = 168
 const s = StyleSheet.create({
   // ── Page ──
   page: {
-    backgroundColor: SB.bg,
     flexDirection: 'row',
     fontFamily: 'Helvetica',
+    backgroundColor: MN.bg,
   },
 
   // ── Sidebar ──
   sidebar: {
     width: SIDEBAR_W,
-    paddingTop: 36,
-    paddingBottom: 36,
-    paddingHorizontal: 20,
+    backgroundColor: SB.bg,
+    paddingTop: 28,
+    paddingBottom: 24,
+    paddingHorizontal: 16,
   },
   sbName: {
-    fontSize: 16,
+    fontSize: 13,
     fontFamily: 'Helvetica-Bold',
-    color: SB.text,
-    marginBottom: 4,
+    color: SB.heading,
+    marginBottom: 2,
     lineHeight: 1.2,
   },
   sbRole: {
-    fontSize: 9,
+    fontSize: 8,
     color: SB.accent,
-    marginBottom: 20,
-    lineHeight: 1.4,
+    fontFamily: 'Helvetica-Bold',
+    marginBottom: 14,
+    lineHeight: 1.3,
   },
   sbDivider: {
-    height: 1,
-    backgroundColor: SB.border,
-    marginBottom: 14,
+    height: 0.75,
+    backgroundColor: SB.divider,
+    marginBottom: 10,
   },
   sbSectionLabel: {
     fontSize: 7,
     fontFamily: 'Helvetica-Bold',
     color: SB.accent,
-    letterSpacing: 1.5,
-    marginBottom: 10,
+    letterSpacing: 1.2,
+    marginBottom: 7,
   },
   sbItem: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    marginBottom: 6,
+    marginBottom: 4,
   },
-  sbItemDot: {
-    width: 4,
-    height: 4,
-    borderRadius: 2,
-    backgroundColor: SB.accent,
-    marginTop: 4,
-    marginRight: 7,
-    flexShrink: 0,
+  sbItemLabel: {
+    fontSize: 6.5,
+    fontFamily: 'Helvetica-Bold',
+    color: SB.muted,
+    marginBottom: 1,
   },
   sbItemText: {
-    fontSize: 8,
-    color: SB.text,
-    lineHeight: 1.5,
-    flex: 1,
-  },
-  sbItemMuted: {
     fontSize: 7.5,
-    color: SB.muted,
-    lineHeight: 1.5,
+    color: SB.text,
+    lineHeight: 1.4,
     flex: 1,
   },
-  sbSkillGroup: { marginBottom: 11 },
+  sbLink: {
+    fontSize: 7.5,
+    color: SB.accent,
+    textDecoration: 'none',
+    lineHeight: 1.4,
+    flex: 1,
+  },
+  sbSkillGroup: { marginBottom: 8 },
   sbSkillGroupLabel: {
-    fontSize: 8,
+    fontSize: 7,
     fontFamily: 'Helvetica-Bold',
-    color: SB.text,
-    marginBottom: 5,
+    color: SB.heading,
+    marginBottom: 3,
   },
   sbSkillChips: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 4,
   },
   sbChip: {
-    backgroundColor: '#1e3a52',
-    borderRadius: 3,
-    paddingHorizontal: 6,
-    paddingVertical: 2,
-    marginRight: 4,
-    marginBottom: 4,
+    backgroundColor: '#ffffff',
+    borderRadius: 2,
+    paddingHorizontal: 4,
+    paddingVertical: 1.5,
+    marginRight: 3,
+    marginBottom: 3,
+    borderWidth: 0.5,
+    borderColor: SB.divider,
   },
   sbChipText: {
-    fontSize: 7,
+    fontSize: 6.5,
     color: SB.text,
   },
 
@@ -123,185 +126,155 @@ const s = StyleSheet.create({
   main: {
     flex: 1,
     backgroundColor: MN.bg,
-    paddingTop: 36,
-    paddingBottom: 36,
-    paddingLeft: 26,
-    paddingRight: 30,
+    paddingTop: 28,
+    paddingBottom: 24,
+    paddingLeft: 22,
+    paddingRight: 24,
   },
-  mainSectionWrap: { marginBottom: 18 },
-  mainSectionHeader: {
+  sectionWrap: { marginBottom: 12 },
+  sectionHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 11,
+    marginBottom: 7,
   },
-  mainSectionBar: {
+  sectionBar: {
     width: 3,
-    height: 13,
-    backgroundColor: SB.accent,
-    marginRight: 7,
-    borderRadius: 2,
+    height: 11,
+    backgroundColor: MN.accent,
+    marginRight: 6,
+    borderRadius: 1,
   },
-  mainSectionTitle: {
-    fontSize: 9.5,
+  sectionTitle: {
+    fontSize: 9,
     fontFamily: 'Helvetica-Bold',
     color: MN.heading,
-    letterSpacing: 1.2,
+    letterSpacing: 0.8,
   },
-  mainDivider: {
-    height: 1,
+  divider: {
+    height: 0.5,
     backgroundColor: MN.divider,
-    marginBottom: 14,
-    marginTop: -4,
+    marginBottom: 8,
+    marginTop: -2,
   },
 
   // summary
-  summary: { fontSize: 8.5, color: MN.body, lineHeight: 1.7 },
+  summary: { fontSize: 8, color: MN.body, lineHeight: 1.65 },
 
   // experience
-  expBlock: { marginBottom: 12 },
+  expBlock: { marginBottom: 8 },
   expRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
     marginBottom: 1,
   },
-  expJob:     { fontSize: 10, fontFamily: 'Helvetica-Bold', color: MN.heading },
-  expDate:    { fontSize: 8, color: MN.muted, fontFamily: 'Helvetica-Oblique', flexShrink: 0, marginLeft: 8 },
+  expJob:     { fontSize: 9, fontFamily: 'Helvetica-Bold', color: MN.heading },
+  expDate:    { fontSize: 7.5, color: MN.muted, fontFamily: 'Helvetica-Oblique', flexShrink: 0, marginLeft: 8 },
   expCompany: {
-    fontSize: 8.5,
-    color: MN.company,
+    fontSize: 8,
+    color: MN.accent,
     fontFamily: 'Helvetica-Bold',
-    marginBottom: 6,
-  },
-  bullet:     { flexDirection: 'row', marginBottom: 3 },
-  bulletDot:  {
-    width: 3,
-    height: 3,
-    borderRadius: 2,
-    backgroundColor: SB.accent,
-    marginTop: 4.5,
-    marginRight: 7,
-    flexShrink: 0,
-  },
-  bulletText: { flex: 1, fontSize: 8.5, color: MN.body, lineHeight: 1.55 },
-
-  // education
-  eduBlock:  { marginBottom: 9 },
-  eduRow:    { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 1 },
-  eduDegree: { fontSize: 9.5, fontFamily: 'Helvetica-Bold', color: MN.heading },
-  eduDate:   { fontSize: 8, color: MN.muted, fontFamily: 'Helvetica-Oblique', flexShrink: 0, marginLeft: 8 },
-  eduInst:   { fontSize: 8.5, color: MN.muted, fontFamily: 'Helvetica-Oblique' },
-
-  // ── Page 2 ──
-  p2Sidebar: {
-    width: SIDEBAR_W,
-    paddingTop: 32,
-    paddingBottom: 36,
-    paddingHorizontal: 20,
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-  },
-  p2SbName: {
-    fontSize: 11,
-    fontFamily: 'Helvetica-Bold',
-    color: SB.text,
     marginBottom: 4,
   },
-  p2SbLabel: {
-    fontSize: 7,
-    color: SB.accent,
-    letterSpacing: 1.5,
-    marginBottom: 16,
+  bullet:     { flexDirection: 'row', marginBottom: 2.5 },
+  bulletDot:  {
+    width: 2.5,
+    height: 2.5,
+    borderRadius: 1.25,
+    backgroundColor: MN.accent,
+    marginTop: 4,
+    marginRight: 5,
+    flexShrink: 0,
   },
+  bulletText: { flex: 1, fontSize: 7.5, color: MN.body, lineHeight: 1.5 },
 
-  // projects grid
-  p2Main: {
-    flex: 1,
-    backgroundColor: MN.bg,
-    paddingTop: 32,
-    paddingBottom: 36,
-    paddingLeft: 26,
-    paddingRight: 30,
-  },
-  projGrid: { flexDirection: 'row', flexWrap: 'wrap' },
-  projBlock: { width: '50%', paddingRight: 16, marginBottom: 16 },
-  projHeader: {
+  // education
+  eduBlock:  { marginBottom: 6 },
+  eduRow:    { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 1 },
+  eduDegree: { fontSize: 8.5, fontFamily: 'Helvetica-Bold', color: MN.heading },
+  eduDate:   { fontSize: 7.5, color: MN.muted, fontFamily: 'Helvetica-Oblique', flexShrink: 0, marginLeft: 8 },
+  eduInst:   { fontSize: 7.5, color: MN.muted, fontFamily: 'Helvetica-Oblique' },
+
+  // projects (compact list for single-page)
+  projBlock: { marginBottom: 7 },
+  projRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 4,
+    marginBottom: 2,
   },
   projTitleWrap: { flexDirection: 'row', alignItems: 'center', flex: 1 },
   projDot: {
-    width: 5,
-    height: 5,
-    borderRadius: 3,
-    backgroundColor: SB.accent,
-    marginRight: 6,
+    width: 3,
+    height: 3,
+    borderRadius: 1.5,
+    backgroundColor: MN.accent,
+    marginRight: 5,
     flexShrink: 0,
   },
-  projTitle:   { fontSize: 9.5, fontFamily: 'Helvetica-Bold', color: MN.heading },
-  projCat:     { fontSize: 7.5, color: MN.muted, fontFamily: 'Helvetica-Oblique', flexShrink: 0, marginLeft: 6 },
-  projDesc:    { fontSize: 8, color: MN.body, lineHeight: 1.55, marginBottom: 5, paddingLeft: 11 },
-  projTechRow: { flexDirection: 'row', flexWrap: 'wrap', paddingLeft: 11 },
+  projTitle:   { fontSize: 8, fontFamily: 'Helvetica-Bold', color: MN.heading },
+  projCat:     { fontSize: 6.5, color: MN.muted, fontFamily: 'Helvetica-Oblique', flexShrink: 0, marginLeft: 6 },
+  projDesc:    { fontSize: 7, color: MN.body, lineHeight: 1.5, paddingLeft: 8, marginBottom: 2 },
+  projTechRow: { flexDirection: 'row', flexWrap: 'wrap', paddingLeft: 8 },
   projTechChip: {
     backgroundColor: MN.tag,
-    borderRadius: 3,
-    paddingHorizontal: 5,
-    paddingVertical: 2,
-    marginRight: 4,
-    marginBottom: 3,
+    borderRadius: 2,
+    paddingHorizontal: 4,
+    paddingVertical: 1.5,
+    marginRight: 3,
+    marginBottom: 2,
   },
-  projTechText: { fontSize: 7, color: MN.tagText },
+  projTechText: { fontSize: 6, color: MN.tagText },
 
   // ── Footer ──
   footer: {
     position: 'absolute',
-    bottom: 16,
-    left: SIDEBAR_W + 26,
-    right: 30,
+    bottom: 14,
+    left: SIDEBAR_W + 22,
+    right: 24,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  footerText: { fontSize: 7, color: '#9ca3af' },
+  footerText: { fontSize: 6.5, color: '#9ca3af' },
 })
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const cv = {
   name:        'Muhammad Haris Arain',
-  title:       'Backend & MERN Stack Engineer',
+  title:       'Full Stack Engineer',
+  phone:       '+92 335 319 1421',
   email:       'harisarain704@gmail.com',
   location:    'Lahore, Pakistan',
-  github:      'github.com/muhammadharisarain',
+  github:      'muhammadharisarain',
   githubUrl:   'https://github.com/muhammadharisarain',
-  linkedin:    'linkedin.com/in/muhammadharisarain',
+  linkedin:    'muhammadharisarain',
   linkedinUrl: 'https://linkedin.com/in/muhammadharisarain',
 
   summary:
-    'Backend & MERN Stack Engineer with 4+ years of hands-on experience architecting and shipping scalable, production-grade web applications. Deep expertise across Node.js, NestJS, Express, React, and Next.js, with strong command of both SQL (PostgreSQL, MySQL) and NoSQL (MongoDB) data modelling. Proven track record delivering 15+ end-to-end products across social platforms, fintech/POS, Web3, entertainment, and analytics — from API design and database architecture to CI/CD deployment on AWS, Docker, and Vercel. Comfortable owning features end-to-end in Agile teams and collaborating directly with product, design, and client stakeholders.',
+    'Full Stack Engineer with 4+ years of professional experience shipping scalable, production-grade web applications at XISLABS. Deep expertise across Node.js, NestJS, Express, React, and Next.js with strong SQL and NoSQL data modelling. Delivered 15+ end-to-end products across social, fintech, Web3, and entertainment domains.',
 
   experience: [
     {
-      title:   'Full Stack / Backend & MERN Engineer',
+      title:   'Full Stack Engineer',
       company: 'XISLABS',
       period:  '2021 – Present',
       bullets: [
-        'Architected and shipped 15+ full-stack products using NestJS, Express, Node.js, React, and Next.js — owning features end-to-end from API design through UI delivery and production deployment.',
-        'Designed normalised PostgreSQL schemas and denormalised MongoDB collections tuned for high-throughput read/write workloads; added strategic indexes and aggregation pipelines that cut p95 query times by 40-60%.',
-        'Built RESTful and GraphQL APIs integrated with Stripe, AWS S3, Twilio, Firebase, and blockchain/Web3 providers — with JWT auth, role-based access control, and request validation via Zod / class-validator.',
+        'Architected and shipped 15+ full-stack products using NestJS, Express, React, and Next.js — owning features end-to-end from API design through UI delivery and production deployment.',
+        'Designed PostgreSQL schemas and MongoDB collections tuned for high-throughput workloads; added strategic indexes and aggregation pipelines that cut p95 query times by 40–60%.',
+        'Built RESTful and GraphQL APIs integrated with Stripe, AWS S3, Twilio, Firebase, and blockchain providers — with JWT auth, RBAC, and request validation via Zod / class-validator.',
         'Implemented real-time features using Socket.io and WebRTC powering live messaging, multiplayer gaming, and karaoke battle modes for thousands of concurrent users.',
-        'Containerised services with Docker and set up CI/CD pipelines on GitHub Actions, deploying to AWS EC2/S3 and Vercel with zero-downtime releases.',
-        'Collaborated with designers to translate Figma specs into pixel-perfect, accessible React interfaces using Tailwind CSS, Framer Motion, and Redux Toolkit.',
-        'Mentored junior developers through code reviews, pair programming, and internal knowledge sharing on system design and testing practices.',
+        'Containerised services with Docker and set up CI/CD on GitHub Actions, deploying to AWS EC2/S3 and Vercel with zero-downtime releases.',
+        'Translated Figma specs into pixel-perfect, accessible React interfaces using Tailwind CSS, Framer Motion, and Redux Toolkit.',
+        'Mentored 3+ junior developers through code reviews and pair programming, reducing average onboarding time from 4 weeks to 2.',
       ],
     },
   ],
 
   education: [
     {
-      degree:      "Bachelor's in Computer Science (BS-CS)",
+      degree:      "BS Computer Science (In Progress)",
       institution: 'Virtual University of Pakistan',
-      period:      '2022 – 2026',
+      period:      '2022 – Expected 2026',
     },
     {
       degree:      'Intermediate — Pre-Engineering (FSc)',
@@ -311,70 +284,67 @@ const cv = {
   ],
 
   skills: {
-    frontend: ['React.js', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Redux', 'Framer Motion'],
-    backend:  ['Node.js', 'Express.js', 'NestJS', 'REST APIs', 'GraphQL', 'Socket.io', 'WebRTC', 'Redis', 'JWT'],
+    frontend: ['React.js', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Redux'],
+    backend:  ['Node.js', 'Express', 'NestJS', 'REST APIs', 'GraphQL', 'Socket.io', 'WebRTC', 'Redis'],
     database: ['MongoDB', 'PostgreSQL', 'MySQL', 'Prisma', 'Mongoose'],
-    tools:    ['Git', 'Docker', 'AWS', 'Vercel', 'GitHub Actions', 'Postman', 'Linux', 'Nginx'],
+    devops:   ['Docker', 'AWS', 'Vercel', 'GitHub Actions', 'Nginx', 'Linux', 'Git'],
   },
-
-  // Top 6 skills for page-2 sidebar ATS repeat
-  topSkills: ['Node.js', 'NestJS', 'React', 'Next.js', 'TypeScript', 'PostgreSQL', 'MongoDB', 'AWS'],
 
   projects: [
     {
       title:    'Wayfellow',
       category: 'Social Platform',
-      desc:     'Professional networking platform combining LinkedIn and Twitter — job posts, events, real-time DMs, and a professional feed. Built on a scalable Node.js backend with Socket.io messaging and an AWS-hosted media pipeline.',
-      tech:     ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Redux', 'AWS'],
+      desc:     'Professional networking platform with job posts, events, real-time DMs, and a feed — serving 10K+ users on a Node.js + Socket.io backend with AWS media pipeline.',
+      tech:     ['React', 'Node.js', 'MongoDB', 'Socket.io', 'AWS'],
     },
     {
       title:    'Fatoraty',
       category: 'Business / POS',
-      desc:     'Comprehensive Point-of-Sale and back-office suite handling inventory, transactions, thermal-printer receipts, and multi-branch sales analytics with offline-first capability.',
+      desc:     'POS and back-office suite handling inventory, transactions, thermal-printer receipts, and multi-branch analytics — deployed across 5+ retail locations.',
       tech:     ['React', 'Node.js', 'MongoDB', 'AWS', 'Redux'],
     },
     {
       title:    'Tamam',
       category: 'Form Management',
-      desc:     'Dynamic form management platform with a drag-and-drop builder, conditional logic, workflow automation, role-based approvals, and real-time analytics on submissions.',
-      tech:     ['React', 'Node.js', 'Express', 'PostgreSQL', 'Socket.io'],
+      desc:     'Dynamic form platform with drag-and-drop builder, conditional logic, workflow automation, and analytics processing 50K+ monthly submissions.',
+      tech:     ['React', 'Node.js', 'PostgreSQL', 'Socket.io'],
     },
     {
       title:    'Battle Saga',
       category: 'Web3 / Blockchain',
-      desc:     'Web3 gaming platform with on-chain battles, NFT rewards, and in-game token economy — Ethereum smart contracts plus a React + Web3.js frontend wrapping wallet flows.',
-      tech:     ['React', 'Solidity', 'Web3.js', 'Ethereum', 'NFT'],
+      desc:     'Web3 gaming platform with on-chain battles, NFT rewards, and token economy — 2K+ active players on Ethereum smart contracts.',
+      tech:     ['React', 'Solidity', 'Web3.js', 'Ethereum'],
     },
     {
       title:    'Campaign Estimator',
-      category: 'Business Analytics',
-      desc:     'Marketing analytics tool that forecasts campaign reach, CTA conversion, and ROI using historical data and lightweight ML models, surfacing optimisation recommendations.',
-      tech:     ['React', 'TypeScript', 'Node.js', 'Chart.js', 'ML'],
+      category: 'Analytics',
+      desc:     'Marketing tool forecasting campaign reach, conversion, and ROI — used by 3 enterprise clients to plan 100+ campaigns.',
+      tech:     ['React', 'TypeScript', 'Node.js', 'Chart.js'],
     },
     {
       title:    'Karaoke System',
       category: 'Entertainment',
-      desc:     'Karaoke platform with 1-on-1 and 1-to-many battle modes, AI pitch scoring, prize competitions, and live leaderboards powered by WebRTC and Redis.',
+      desc:     'Karaoke platform with battle modes, AI pitch scoring, and live leaderboards — 5K+ users in Korean and Japanese markets.',
       tech:     ['React', 'Node.js', 'WebRTC', 'Socket.io', 'Redis'],
     },
   ],
 }
 
-// ─── Small helpers ────────────────────────────────────────────────────────────
+// ─── Helpers ─────────────────────────────────────────────────────────────────
 function SbSection({ label }: { label: string }) {
   return (
-    <View style={{ marginBottom: 12 }}>
+    <View style={{ marginBottom: 8 }}>
       <View style={s.sbDivider} />
       <Text style={s.sbSectionLabel}>{label}</Text>
     </View>
   )
 }
 
-function MainSection({ title }: { title: string }) {
+function Section({ title }: { title: string }) {
   return (
-    <View style={s.mainSectionHeader}>
-      <View style={s.mainSectionBar} />
-      <Text style={s.mainSectionTitle}>{title}</Text>
+    <View style={s.sectionHeader}>
+      <View style={s.sectionBar} />
+      <Text style={s.sectionTitle}>{title}</Text>
     </View>
   )
 }
@@ -387,7 +357,6 @@ export function CVDocument() {
       author="Muhammad Haris Arain"
       subject="Professional Curriculum Vitae"
     >
-      {/* ══════════════════════ PAGE 1 ══════════════════════ */}
       <Page size="A4" style={s.page}>
 
         {/* ── Sidebar ── */}
@@ -397,29 +366,31 @@ export function CVDocument() {
           <Text style={s.sbName}>{cv.name}</Text>
           <Text style={s.sbRole}>{cv.title}</Text>
 
-          {/* CONTACTS */}
+          {/* CONTACT */}
           <SbSection label="CONTACT" />
-          <View style={s.sbItem}>
-            <View style={s.sbItemDot} />
+          <View style={{ marginBottom: 3 }}>
+            <Text style={s.sbItemLabel}>Phone</Text>
+            <Text style={s.sbItemText}>{cv.phone}</Text>
+          </View>
+          <View style={{ marginBottom: 3 }}>
+            <Text style={s.sbItemLabel}>Email</Text>
             <Text style={s.sbItemText}>{cv.email}</Text>
           </View>
-          <View style={s.sbItem}>
-            <View style={s.sbItemDot} />
+          <View style={{ marginBottom: 3 }}>
+            <Text style={s.sbItemLabel}>Location</Text>
             <Text style={s.sbItemText}>{cv.location}</Text>
           </View>
+          <View style={{ marginBottom: 3 }}>
+            <Text style={s.sbItemLabel}>GitHub</Text>
+            <Link src={cv.githubUrl} style={s.sbLink}>
+              {cv.github}
+            </Link>
+          </View>
           <View style={{ marginBottom: 6 }}>
-            <View style={s.sbItem}>
-              <View style={s.sbItemDot} />
-              <Link src={cv.githubUrl} style={[s.sbItemMuted, { textDecoration: 'none' }]}>
-                {cv.github}
-              </Link>
-            </View>
-            <View style={s.sbItem}>
-              <View style={s.sbItemDot} />
-              <Link src={cv.linkedinUrl} style={[s.sbItemMuted, { textDecoration: 'none' }]}>
-                {cv.linkedin}
-              </Link>
-            </View>
+            <Text style={s.sbItemLabel}>LinkedIn</Text>
+            <Link src={cv.linkedinUrl} style={s.sbLink}>
+              {cv.linkedin}
+            </Link>
           </View>
 
           {/* SKILLS */}
@@ -459,31 +430,47 @@ export function CVDocument() {
           </View>
 
           <View style={s.sbSkillGroup}>
-            <Text style={s.sbSkillGroupLabel}>Tools</Text>
+            <Text style={s.sbSkillGroupLabel}>DevOps & Tools</Text>
             <View style={s.sbSkillChips}>
-              {cv.skills.tools.map((sk) => (
+              {cv.skills.devops.map((sk) => (
                 <View key={sk} style={s.sbChip}>
                   <Text style={s.sbChipText}>{sk}</Text>
                 </View>
               ))}
             </View>
           </View>
+
+          {/* EDUCATION (moved to sidebar to save main column space) */}
+          <SbSection label="EDUCATION" />
+          {cv.education.map((edu, i) => (
+            <View key={i} style={{ marginBottom: 6 }}>
+              <Text style={{ fontSize: 7.5, fontFamily: 'Helvetica-Bold', color: SB.heading, lineHeight: 1.3 }}>
+                {edu.degree}
+              </Text>
+              <Text style={{ fontSize: 7, color: SB.muted, lineHeight: 1.3, fontFamily: 'Helvetica-Oblique' }}>
+                {edu.institution}
+              </Text>
+              <Text style={{ fontSize: 6.5, color: SB.muted, lineHeight: 1.3 }}>
+                {edu.period}
+              </Text>
+            </View>
+          ))}
         </View>
 
         {/* ── Main content ── */}
         <View style={s.main}>
 
           {/* PROFESSIONAL SUMMARY */}
-          <View style={s.mainSectionWrap}>
-            <MainSection title="PROFESSIONAL SUMMARY" />
-            <View style={s.mainDivider} />
+          <View style={s.sectionWrap}>
+            <Section title="Professional Summary" />
+            <View style={s.divider} />
             <Text style={s.summary}>{cv.summary}</Text>
           </View>
 
           {/* WORK EXPERIENCE */}
-          <View style={s.mainSectionWrap}>
-            <MainSection title="WORK EXPERIENCE" />
-            <View style={s.mainDivider} />
+          <View style={s.sectionWrap}>
+            <Section title="Work Experience" />
+            <View style={s.divider} />
             {cv.experience.map((exp, i) => (
               <View key={i} style={s.expBlock}>
                 <View style={s.expRow}>
@@ -501,64 +488,13 @@ export function CVDocument() {
             ))}
           </View>
 
-          {/* EDUCATION */}
-          <View style={s.mainSectionWrap}>
-            <MainSection title="EDUCATION" />
-            <View style={s.mainDivider} />
-            {cv.education.map((edu, i) => (
-              <View key={i} style={s.eduBlock}>
-                <View style={s.eduRow}>
-                  <Text style={s.eduDegree}>{edu.degree}</Text>
-                  <Text style={s.eduDate}>{edu.period}</Text>
-                </View>
-                <Text style={s.eduInst}>{edu.institution}</Text>
-              </View>
-            ))}
-          </View>
-        </View>
-
-        {/* Footer */}
-        <View style={s.footer}>
-          <Text style={s.footerText}>Muhammad Haris Arain — Curriculum Vitae</Text>
-          <Text style={s.footerText}>1 / 2</Text>
-        </View>
-      </Page>
-
-      {/* ══════════════════════ PAGE 2 — PROJECTS ══════════════════════ */}
-      <Page size="A4" style={s.page}>
-
-        {/* Sidebar */}
-        <View style={s.p2Sidebar}>
-          <Text style={s.p2SbName}>{cv.name}</Text>
-          <Text style={s.p2SbLabel}>PROJECTS</Text>
-          <View style={{ height: 1, backgroundColor: SB.border, marginBottom: 16 }} />
-
-          {/* ATS-friendly skill repeat */}
-          <Text style={[s.sbSectionLabel, { marginBottom: 8 }]}>KEY SKILLS</Text>
-          <View style={s.sbSkillChips}>
-            {cv.topSkills.map((sk) => (
-              <View key={sk} style={s.sbChip}>
-                <Text style={s.sbChipText}>{sk}</Text>
-              </View>
-            ))}
-          </View>
-
-          <View style={{ height: 1, backgroundColor: SB.border, marginTop: 16, marginBottom: 16 }} />
-          <Link src={cv.githubUrl} style={{ fontSize: 8, color: SB.accent, textDecoration: 'none', marginBottom: 6 }}>
-            {cv.github}
-          </Link>
-          <Text style={{ fontSize: 8, color: SB.muted }}>{cv.email}</Text>
-        </View>
-
-        {/* Projects grid */}
-        <View style={s.p2Main}>
-          <MainSection title="FEATURED PROJECTS" />
-          <View style={{ height: 1, backgroundColor: MN.divider, marginBottom: 16, marginTop: -4 }} />
-
-          <View style={s.projGrid}>
+          {/* FEATURED PROJECTS */}
+          <View style={s.sectionWrap}>
+            <Section title="Key Projects (at XISLABS)" />
+            <View style={s.divider} />
             {cv.projects.map((proj, i) => (
               <View key={i} style={s.projBlock}>
-                <View style={s.projHeader}>
+                <View style={s.projRow}>
                   <View style={s.projTitleWrap}>
                     <View style={s.projDot} />
                     <Text style={s.projTitle}>{proj.title}</Text>
@@ -578,9 +514,10 @@ export function CVDocument() {
           </View>
         </View>
 
+        {/* Footer */}
         <View style={s.footer}>
-          <Text style={s.footerText}>{cv.email}  ·  {cv.github}</Text>
-          <Text style={s.footerText}>2 / 2</Text>
+          <Text style={s.footerText}>Muhammad Haris Arain — Curriculum Vitae</Text>
+          <Text style={s.footerText}>Page 1 of 1</Text>
         </View>
       </Page>
     </Document>

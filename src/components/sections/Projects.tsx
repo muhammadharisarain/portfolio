@@ -12,7 +12,7 @@ export default function Projects() {
       <div className="container mx-auto px-6">
         <SectionHeading
           title="Featured Projects"
-          subtitle="A showcase of my recent work and passion projects"
+          subtitle="Professional projects delivered at XISLABS for clients worldwide"
         />
 
         <div className="max-w-7xl mx-auto">

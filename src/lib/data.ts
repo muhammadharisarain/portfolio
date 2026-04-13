@@ -8,6 +8,7 @@ export const personalInfo = {
   email: 'harisarain704@gmail.com',
   linkedin: 'https://linkedin.com/in/muhammadharisarain',
   github: 'https://github.com/muhammadharisarain',
+  phone: '+92 335 319 1421',
   location: 'Lahore, Pakistan',
   permanentAddress: 'Sindh, Pakistan',
   age: 22,
@@ -18,16 +19,16 @@ export const personalInfo = {
 
 export const stats = [
   { value: 4, suffix: '+', label: 'Years Experience' },
-  { value: 50, suffix: '+', label: 'Projects Completed' },
-  { value: 30, suffix: '+', label: 'Happy Clients' },
+  { value: 15, suffix: '+', label: 'Projects Delivered' },
+  { value: 8, suffix: '+', label: 'Happy Clients' },
   { value: 20, suffix: '+', label: 'Technologies' },
 ]
 
 export const aboutParagraphs = [
-  "I'm a passionate Full Stack Developer with over 4 years of experience architecting and shipping production-grade web applications. My core expertise is the MERN stack (MongoDB, Express.js, React.js, Node.js), complemented by strong command of NestJS, Next.js, and TypeScript for building scalable, type-safe systems from the ground up.",
-  "I've led end-to-end delivery on diverse products — from Point-of-Sale systems processing live transactions, to real-time social platforms, Web3 gaming dApps, and dynamic form management suites. I believe in writing clean, modular, and maintainable code, guided by SOLID principles, thoughtful testing, and code-review discipline.",
+  "I'm a Full Stack Developer with over 4 years of professional experience at XISLABS, architecting and shipping production-grade web applications for clients across fintech, social, entertainment, and Web3. My core expertise is the MERN stack (MongoDB, Express.js, React.js, Node.js), complemented by strong command of NestJS, Next.js, and TypeScript.",
+  "At XISLABS, I've led end-to-end delivery on 15+ client projects — from Point-of-Sale systems processing live transactions, to real-time social platforms, Web3 gaming dApps, and dynamic form management suites. I believe in writing clean, modular, and maintainable code, guided by SOLID principles, thoughtful testing, and code-review discipline.",
   "My engineering approach combines technical depth with a strong sense of product and business context. I specialize in designing solutions that solve the immediate need while being structured to scale — clean REST and GraphQL APIs, well-modeled SQL and NoSQL data layers, real-time communication with Socket.io and WebRTC, and deployment pipelines built on AWS, Docker, and CI/CD.",
-  "When I'm not coding, I'm exploring new technologies, contributing to open-source, and sharpening my craft around system design, performance, and developer experience. I'm always excited to partner with teams that value quality, collaboration, and turning ambitious ideas into reliable products.",
+  "When I'm not coding, I'm exploring new technologies and sharpening my craft around system design, performance, and developer experience. I'm always excited to partner with teams that value quality, collaboration, and turning ambitious ideas into reliable products.",
 ]
 
 // Each skill: name, simpleicons slug, brand color (hex, no #), proficiency 0-100
@@ -145,7 +146,7 @@ export const projects = [
   {
     title: 'Wayfellow',
     description:
-      'Professional networking platform combining the best of LinkedIn and Twitter — job posts, event management, real-time DMs, and a professional feed. Built on a scalable Node.js backend with Socket.io-powered messaging and an AWS-hosted media pipeline.',
+      'Professional networking platform built for a client at XISLABS — combining job posts, event management, real-time DMs, and a professional feed serving 10K+ users. Scalable Node.js backend with Socket.io messaging and an AWS-hosted media pipeline.',
     image: '/wayfellow.svg',
     tags: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Redux', 'AWS'],
     category: 'Social Platform',
@@ -156,7 +157,7 @@ export const projects = [
   {
     title: 'Fatoraty',
     description:
-      'Comprehensive Point-of-Sale and back-office system for retail and F&B. Handles inventory, transactions, receipts with thermal-printer support, and sales analytics — with offline-first capability and multi-branch reporting dashboards.',
+      'Comprehensive POS and back-office system developed at XISLABS for retail and F&B clients. Handles inventory, transactions, thermal-printer receipts, and multi-branch sales analytics — deployed across 5+ business locations with offline-first capability.',
     image: '/fatoraty.png',
     tags: ['React', 'Node.js', 'MongoDB', 'AWS', 'Redux', 'Thermal Printing'],
     category: 'Business Solution',
@@ -167,7 +168,7 @@ export const projects = [
   {
     title: 'Tamam',
     description:
-      'Sophisticated form management platform delivering customer-facing services through dynamic, conditional forms. Includes a drag-and-drop form builder, workflow automation, role-based approvals, and real-time analytics on submissions.',
+      'Form management platform built at XISLABS for enterprise clients, delivering dynamic conditional forms with a drag-and-drop builder. Features workflow automation, role-based approvals, and real-time analytics processing 50K+ monthly submissions.',
     image: '/tamam.png',
     tags: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Socket.io'],
     category: 'Form Management',
@@ -178,7 +179,7 @@ export const projects = [
   {
     title: 'Battle Saga',
     description:
-      'Web3 gaming platform with on-chain battles, NFT-based rewards, and in-game token economy. Smart contracts on Ethereum handle matchmaking and payouts, with a React + Web3.js frontend wrapping wallet connections and live battle state.',
+      'Web3 gaming platform developed at XISLABS with on-chain battles, NFT rewards, and an in-game token economy supporting 2K+ active players. Ethereum smart contracts handle matchmaking and payouts, with a React + Web3.js frontend.',
     image: '/battle-saga.svg',
     tags: ['React', 'Solidity', 'Web3.js', 'Ethereum', 'NFT', 'Smart Contracts'],
     category: 'Web3 / Blockchain',
@@ -189,7 +190,7 @@ export const projects = [
   {
     title: 'Campaign Estimator',
     description:
-      'Business analytics tool that helps marketing teams estimate campaign reach, CTA conversion, and ROI before launch. Combines historical data with lightweight ML models to forecast performance and surface optimisation recommendations.',
+      'Marketing analytics tool built at XISLABS that helps teams estimate campaign reach, CTA conversion, and ROI. Combines historical data with ML models to forecast performance, used by 3 enterprise clients to plan 100+ campaigns.',
     image: '/campaign-estimator.png',
     tags: ['React', 'TypeScript', 'Node.js', 'Chart.js', 'ML', 'Analytics'],
     category: 'Business Analytics',
@@ -200,7 +201,7 @@ export const projects = [
   {
     title: 'Karaoke System',
     description:
-      'Feature-rich karaoke platform popular in Korean and Japanese markets. Supports 1-on-1 and 1-to-many battle modes, AI-driven pitch/perfection scoring, weekly prize competitions, and live leaderboards powered by WebRTC and Redis.',
+      'Karaoke platform developed at XISLABS for Korean and Japanese markets with 5K+ active users. Features 1-on-1 and 1-to-many battle modes, AI pitch scoring, weekly prize competitions, and live leaderboards powered by WebRTC and Redis.',
     image: '/karaoke.svg',
     tags: ['React', 'Node.js', 'WebRTC', 'Socket.io', 'Audio API', 'Redis'],
     category: 'Entertainment',

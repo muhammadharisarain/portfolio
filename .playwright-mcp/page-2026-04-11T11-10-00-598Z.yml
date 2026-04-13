@@ -1,0 +1,452 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic: MHA
+    - paragraph [ref=e6]: Loading...
+  - navigation [ref=e7]:
+    - generic [ref=e8]:
+      - link "MHA" [ref=e9] [cursor=pointer]:
+        - /url: "#home"
+      - list [ref=e10]:
+        - listitem [ref=e11]:
+          - link "Home" [ref=e12] [cursor=pointer]:
+            - /url: "#home"
+            - text: Home
+        - listitem [ref=e14]:
+          - link "About" [ref=e15] [cursor=pointer]:
+            - /url: "#about"
+        - listitem [ref=e16]:
+          - link "Skills" [ref=e17] [cursor=pointer]:
+            - /url: "#skills"
+        - listitem [ref=e18]:
+          - link "Experience" [ref=e19] [cursor=pointer]:
+            - /url: "#experience"
+        - listitem [ref=e20]:
+          - link "Projects" [ref=e21] [cursor=pointer]:
+            - /url: "#projects"
+        - listitem [ref=e22]:
+          - link "Contact" [ref=e23] [cursor=pointer]:
+            - /url: "#contact"
+  - main [ref=e24]:
+    - generic [ref=e29]:
+      - generic [ref=e32]:
+        - generic:
+          - generic:
+            - generic:
+              - img "Muhammad Haris Arain"
+        - generic [ref=e33]:
+          - generic [ref=e35]: Available for Work
+          - heading "Muhammad Haris Arain" [level=1] [ref=e37]
+          - heading "Full Stack Developer | MERN Stack Specialist" [level=2] [ref=e38]
+          - paragraph [ref=e39]: Converting Ideas into Reality with Modern Web Technologies
+          - generic [ref=e40]:
+            - generic [ref=e41]:
+              - img [ref=e42]
+              - generic [ref=e45]: Lahore, Pakistan
+            - generic [ref=e46]:
+              - img [ref=e47]
+              - generic [ref=e49]: "Age: 22"
+            - generic [ref=e50]:
+              - img [ref=e51]
+              - generic [ref=e54]: 4+ Years Exp.
+            - generic [ref=e55]:
+              - img [ref=e56]
+              - generic [ref=e59]: harisarain704@gmail.com
+          - generic [ref=e60]:
+            - link "GitHub" [ref=e61] [cursor=pointer]:
+              - /url: https://github.com/muhammadharisarain
+              - img [ref=e62]
+              - generic [ref=e65]: GitHub
+            - link "LinkedIn" [ref=e66] [cursor=pointer]:
+              - /url: https://linkedin.com/in/muhammadharisarain
+              - img [ref=e67]
+              - generic [ref=e71]: LinkedIn
+            - link "Email" [ref=e72] [cursor=pointer]:
+              - /url: mailto:harisarain704@gmail.com
+              - img [ref=e73]
+              - generic [ref=e76]: Email
+          - generic [ref=e77]:
+            - button "Download CV" [ref=e78] [cursor=pointer]:
+              - img [ref=e79]
+              - text: Download CV
+            - button "Get In Touch" [ref=e82] [cursor=pointer]:
+              - img [ref=e83]
+              - text: Get In Touch
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - generic [ref=e88]: 0+
+          - paragraph [ref=e89]: Years Experience
+        - generic [ref=e90]:
+          - generic [ref=e91]: 0+
+          - paragraph [ref=e92]: Projects Delivered
+        - generic [ref=e93]:
+          - generic [ref=e94]: 0+
+          - paragraph [ref=e95]: Happy Clients
+        - generic [ref=e96]:
+          - generic [ref=e97]: 0+
+          - paragraph [ref=e98]: Technologies
+    - generic [ref=e103]:
+      - generic [ref=e104]:
+        - heading "About Me" [level=2] [ref=e105]
+        - paragraph [ref=e106]: Passionate about creating impactful digital experiences through code
+      - generic [ref=e107]:
+        - generic [ref=e108]:
+          - generic [ref=e110]:
+            - paragraph [ref=e111]: I'm a Full Stack Developer with over 4 years of professional experience at XISLABS, architecting and shipping production-grade web applications for clients across fintech, social, entertainment, and Web3. My core expertise is the MERN stack (MongoDB, Express.js, React.js, Node.js), complemented by strong command of NestJS, Next.js, and TypeScript.
+            - paragraph [ref=e112]: At XISLABS, I've led end-to-end delivery on 15+ client projects — from Point-of-Sale systems processing live transactions, to real-time social platforms, Web3 gaming dApps, and dynamic form management suites. I believe in writing clean, modular, and maintainable code, guided by SOLID principles, thoughtful testing, and code-review discipline.
+            - paragraph [ref=e113]: My engineering approach combines technical depth with a strong sense of product and business context. I specialize in designing solutions that solve the immediate need while being structured to scale — clean REST and GraphQL APIs, well-modeled SQL and NoSQL data layers, real-time communication with Socket.io and WebRTC, and deployment pipelines built on AWS, Docker, and CI/CD.
+            - paragraph [ref=e114]: When I'm not coding, I'm exploring new technologies and sharpening my craft around system design, performance, and developer experience. I'm always excited to partner with teams that value quality, collaboration, and turning ambitious ideas into reliable products.
+          - generic [ref=e115]:
+            - generic [ref=e117]:
+              - img [ref=e119]
+              - heading "Clean Code" [level=3] [ref=e123]
+              - paragraph [ref=e124]: Writing maintainable and scalable code
+            - generic [ref=e126]:
+              - img [ref=e128]
+              - heading "Problem Solver" [level=3] [ref=e130]
+              - paragraph [ref=e131]: Finding creative solutions to complex challenges
+            - generic [ref=e133]:
+              - img [ref=e135]
+              - heading "Performance" [level=3] [ref=e140]
+              - paragraph [ref=e141]: Building fast and optimized applications
+            - generic [ref=e143]:
+              - img [ref=e145]
+              - heading "Team Player" [level=3] [ref=e150]
+              - paragraph [ref=e151]: Collaborating effectively with teams
+        - code [ref=e155]: "const developer = { name: \"Muhammad Haris Arain\", skills: [\"React\", \"Node.js\", \"TypeScript\"], passion: \"Building amazing web experiences\", async createSolution() { return \"Innovative & Scalable\"; } };"
+    - generic [ref=e157]:
+      - generic [ref=e158]:
+        - heading "Skills & Expertise" [level=2] [ref=e159]
+        - paragraph [ref=e160]: A curated stack I use to design, build, and ship production-grade software
+      - generic [ref=e161]:
+        - generic [ref=e162]:
+          - button "Frontend Development" [ref=e163] [cursor=pointer]:
+            - img [ref=e164]
+            - generic [ref=e168]: Frontend Development
+          - button "Backend Development" [ref=e170] [cursor=pointer]:
+            - img [ref=e171]
+            - generic [ref=e174]: Backend Development
+          - button "Databases" [ref=e175] [cursor=pointer]:
+            - img [ref=e176]
+            - generic [ref=e180]: Databases
+          - button "DevOps & Cloud" [ref=e181] [cursor=pointer]:
+            - img [ref=e182]
+            - generic [ref=e184]: DevOps & Cloud
+          - button "Tools & Workflow" [ref=e185] [cursor=pointer]:
+            - img [ref=e186]
+            - generic [ref=e188]: Tools & Workflow
+        - generic [ref=e189]:
+          - generic [ref=e192]:
+            - img "React.js logo" [ref=e194]
+            - heading "React.js" [level=4] [ref=e195]
+            - generic [ref=e197]:
+              - generic [ref=e198]: Proficiency
+              - generic [ref=e199]: 95%
+          - generic [ref=e203]:
+            - img "Next.js logo" [ref=e205]
+            - heading "Next.js" [level=4] [ref=e206]
+            - generic [ref=e208]:
+              - generic [ref=e209]: Proficiency
+              - generic [ref=e210]: 92%
+          - generic [ref=e214]:
+            - img "TypeScript logo" [ref=e216]
+            - heading "TypeScript" [level=4] [ref=e217]
+            - generic [ref=e219]:
+              - generic [ref=e220]: Proficiency
+              - generic [ref=e221]: 90%
+          - generic [ref=e225]:
+            - img "JavaScript logo" [ref=e227]
+            - heading "JavaScript" [level=4] [ref=e228]
+            - generic [ref=e230]:
+              - generic [ref=e231]: Proficiency
+              - generic [ref=e232]: 95%
+          - generic [ref=e236]:
+            - img "Tailwind CSS logo" [ref=e238]
+            - heading "Tailwind CSS" [level=4] [ref=e239]
+            - generic [ref=e241]:
+              - generic [ref=e242]: Proficiency
+              - generic [ref=e243]: 93%
+          - generic [ref=e247]:
+            - img "Redux logo" [ref=e249]
+            - heading "Redux" [level=4] [ref=e250]
+            - generic [ref=e252]:
+              - generic [ref=e253]: Proficiency
+              - generic [ref=e254]: 88%
+          - generic [ref=e258]:
+            - img "HTML5 logo" [ref=e260]
+            - heading "HTML5" [level=4] [ref=e261]
+            - generic [ref=e263]:
+              - generic [ref=e264]: Proficiency
+              - generic [ref=e265]: 98%
+          - generic [ref=e269]:
+            - img "CSS3 logo" [ref=e271]
+            - heading "CSS3" [level=4] [ref=e272]
+            - generic [ref=e274]:
+              - generic [ref=e275]: Proficiency
+              - generic [ref=e276]: 95%
+          - generic [ref=e280]:
+            - img "Framer Motion logo" [ref=e282]
+            - heading "Framer Motion" [level=4] [ref=e283]
+            - generic [ref=e285]:
+              - generic [ref=e286]: Proficiency
+              - generic [ref=e287]: 85%
+        - generic [ref=e289]:
+          - heading "Also Experienced With" [level=3] [ref=e290]
+          - generic [ref=e291]:
+            - generic [ref=e292]: Jest
+            - generic [ref=e293]: Cypress
+            - generic [ref=e294]: Webpack
+            - generic [ref=e295]: Vite
+            - generic [ref=e296]: Material UI
+            - generic [ref=e297]: Sass
+            - generic [ref=e298]: Web3.js
+            - generic [ref=e299]: Solidity
+            - generic [ref=e300]: WebSockets
+            - generic [ref=e301]: Microservices
+            - generic [ref=e302]: Stripe
+            - generic [ref=e303]: Twilio
+            - generic [ref=e304]: Zod
+            - generic [ref=e305]: TRPC
+    - generic [ref=e307]:
+      - generic [ref=e308]:
+        - heading "Work Experience" [level=2] [ref=e309]
+        - paragraph [ref=e310]: My professional journey and career milestones
+      - generic [ref=e317]:
+        - generic [ref=e318]:
+          - img [ref=e320]
+          - generic [ref=e323]: 2021 - Present
+        - heading "Full Stack Developer" [level=3] [ref=e324]
+        - paragraph [ref=e325]: XISLABS
+        - paragraph [ref=e326]: Leading full-stack development on production web platforms for clients across fintech, social, entertainment, and Web3. Own features end-to-end — from architecture and API design, through React/Next.js interfaces, to deployment and monitoring.
+        - list [ref=e327]:
+          - listitem [ref=e328]:
+            - img [ref=e329]
+            - generic [ref=e332]: Shipped 15+ client projects from concept to production, including POS, social, and Web3 applications
+          - listitem [ref=e333]:
+            - img [ref=e334]
+            - generic [ref=e337]: Architected REST & GraphQL APIs in Node.js, Express, and NestJS serving millions of requests
+          - listitem [ref=e338]:
+            - img [ref=e339]
+            - generic [ref=e342]: Designed relational (PostgreSQL) and document (MongoDB) schemas tuned for high-throughput workloads
+          - listitem [ref=e343]:
+            - img [ref=e344]
+            - generic [ref=e347]: Built real-time features using Socket.io and WebRTC for live messaging, gaming, and karaoke platforms
+          - listitem [ref=e348]:
+            - img [ref=e349]
+            - generic [ref=e352]: Integrated third-party services — Stripe, AWS S3, Twilio, Firebase, and blockchain/Web3 providers
+          - listitem [ref=e353]:
+            - img [ref=e354]
+            - generic [ref=e357]: Partnered with designers to translate Figma specs into pixel-perfect, accessible React interfaces
+          - listitem [ref=e358]:
+            - img [ref=e359]
+            - generic [ref=e362]: Set up CI/CD pipelines on GitHub Actions with Dockerized deployments to AWS and Vercel
+    - generic [ref=e365]:
+      - generic [ref=e366]:
+        - heading "Featured Projects" [level=2] [ref=e367]
+        - paragraph [ref=e368]: Professional projects delivered at XISLABS for clients worldwide
+      - generic [ref=e369]:
+        - generic [ref=e370]:
+          - generic [ref=e372] [cursor=pointer]:
+            - generic [ref=e373]:
+              - img "Wayfellow" [ref=e375]
+              - generic [ref=e377]: Social Platform
+              - generic [ref=e378]:
+                - link "View Live" [ref=e379]:
+                  - /url: "#"
+                  - img [ref=e380]
+                - link "View Code" [ref=e384]:
+                  - /url: "#"
+                  - img [ref=e385]
+            - generic [ref=e388]:
+              - generic [ref=e389]:
+                - heading "Wayfellow" [level=3] [ref=e390]
+                - img [ref=e391]
+              - paragraph [ref=e394]: Professional networking platform built for a client at XISLABS — combining job posts, event management, real-time DMs, and a professional feed serving 10K+ users. Scalable Node.js backend with Socket.io messaging and an AWS-hosted media pipeline.
+              - generic [ref=e395]:
+                - generic [ref=e396]: React
+                - generic [ref=e397]: Node.js
+                - generic [ref=e398]: MongoDB
+                - generic [ref=e399]: Socket.io
+                - generic [ref=e400]: "+2"
+          - generic [ref=e402] [cursor=pointer]:
+            - generic [ref=e403]:
+              - img "Fatoraty" [ref=e405]
+              - generic [ref=e407]: Business Solution
+              - generic [ref=e408]:
+                - link "View Live" [ref=e409]:
+                  - /url: "#"
+                  - img [ref=e410]
+                - link "View Code" [ref=e414]:
+                  - /url: "#"
+                  - img [ref=e415]
+            - generic [ref=e418]:
+              - generic [ref=e419]:
+                - heading "Fatoraty" [level=3] [ref=e420]
+                - img [ref=e421]
+              - paragraph [ref=e424]: Comprehensive POS and back-office system developed at XISLABS for retail and F&B clients. Handles inventory, transactions, thermal-printer receipts, and multi-branch sales analytics — deployed across 5+ business locations with offline-first capability.
+              - generic [ref=e425]:
+                - generic [ref=e426]: React
+                - generic [ref=e427]: Node.js
+                - generic [ref=e428]: MongoDB
+                - generic [ref=e429]: AWS
+                - generic [ref=e430]: "+2"
+          - generic [ref=e432] [cursor=pointer]:
+            - generic [ref=e433]:
+              - img "Tamam" [ref=e435]
+              - generic [ref=e437]: Form Management
+              - generic [ref=e438]:
+                - link "View Live" [ref=e439]:
+                  - /url: "#"
+                  - img [ref=e440]
+                - link "View Code" [ref=e444]:
+                  - /url: "#"
+                  - img [ref=e445]
+            - generic [ref=e448]:
+              - generic [ref=e449]:
+                - heading "Tamam" [level=3] [ref=e450]
+                - img [ref=e451]
+              - paragraph [ref=e454]: Form management platform built at XISLABS for enterprise clients, delivering dynamic conditional forms with a drag-and-drop builder. Features workflow automation, role-based approvals, and real-time analytics processing 50K+ monthly submissions.
+              - generic [ref=e455]:
+                - generic [ref=e456]: React
+                - generic [ref=e457]: Node.js
+                - generic [ref=e458]: Express
+                - generic [ref=e459]: PostgreSQL
+                - generic [ref=e460]: "+1"
+          - generic [ref=e462] [cursor=pointer]:
+            - generic [ref=e463]:
+              - img "Battle Saga" [ref=e465]
+              - generic [ref=e467]: Web3 / Blockchain
+              - generic [ref=e468]:
+                - link "View Live" [ref=e469]:
+                  - /url: "#"
+                  - img [ref=e470]
+                - link "View Code" [ref=e474]:
+                  - /url: "#"
+                  - img [ref=e475]
+            - generic [ref=e478]:
+              - generic [ref=e479]:
+                - heading "Battle Saga" [level=3] [ref=e480]
+                - img [ref=e481]
+              - paragraph [ref=e484]: Web3 gaming platform developed at XISLABS with on-chain battles, NFT rewards, and an in-game token economy supporting 2K+ active players. Ethereum smart contracts handle matchmaking and payouts, with a React + Web3.js frontend.
+              - generic [ref=e485]:
+                - generic [ref=e486]: React
+                - generic [ref=e487]: Solidity
+                - generic [ref=e488]: Web3.js
+                - generic [ref=e489]: Ethereum
+                - generic [ref=e490]: "+2"
+          - generic [ref=e492] [cursor=pointer]:
+            - generic [ref=e493]:
+              - img "Campaign Estimator" [ref=e495]
+              - generic [ref=e497]: Business Analytics
+              - generic [ref=e498]:
+                - link "View Live" [ref=e499]:
+                  - /url: "#"
+                  - img [ref=e500]
+                - link "View Code" [ref=e504]:
+                  - /url: "#"
+                  - img [ref=e505]
+            - generic [ref=e508]:
+              - generic [ref=e509]:
+                - heading "Campaign Estimator" [level=3] [ref=e510]
+                - img [ref=e511]
+              - paragraph [ref=e514]: Marketing analytics tool built at XISLABS that helps teams estimate campaign reach, CTA conversion, and ROI. Combines historical data with ML models to forecast performance, used by 3 enterprise clients to plan 100+ campaigns.
+              - generic [ref=e515]:
+                - generic [ref=e516]: React
+                - generic [ref=e517]: TypeScript
+                - generic [ref=e518]: Node.js
+                - generic [ref=e519]: Chart.js
+                - generic [ref=e520]: "+2"
+          - generic [ref=e522] [cursor=pointer]:
+            - generic [ref=e523]:
+              - img "Karaoke System" [ref=e525]
+              - generic [ref=e527]: Entertainment
+              - generic [ref=e528]:
+                - link "View Live" [ref=e529]:
+                  - /url: "#"
+                  - img [ref=e530]
+                - link "View Code" [ref=e534]:
+                  - /url: "#"
+                  - img [ref=e535]
+            - generic [ref=e538]:
+              - generic [ref=e539]:
+                - heading "Karaoke System" [level=3] [ref=e540]
+                - img [ref=e541]
+              - paragraph [ref=e544]: Karaoke platform developed at XISLABS for Korean and Japanese markets with 5K+ active users. Features 1-on-1 and 1-to-many battle modes, AI pitch scoring, weekly prize competitions, and live leaderboards powered by WebRTC and Redis.
+              - generic [ref=e545]:
+                - generic [ref=e546]: React
+                - generic [ref=e547]: Node.js
+                - generic [ref=e548]: WebRTC
+                - generic [ref=e549]: Socket.io
+                - generic [ref=e550]: "+2"
+        - link "View More on GitHub" [ref=e552] [cursor=pointer]:
+          - /url: https://github.com/muhammadharisarain
+          - img [ref=e553]
+          - text: View More on GitHub
+          - img [ref=e556]
+    - generic [ref=e560]:
+      - generic [ref=e561]:
+        - heading "Let's Work Together" [level=2] [ref=e562]
+        - paragraph [ref=e563]: Have a project in mind? Let's discuss how we can collaborate
+      - generic [ref=e565]:
+        - generic [ref=e567]:
+          - heading "Get In Touch" [level=3] [ref=e568]
+          - generic [ref=e569]:
+            - link "Email harisarain704@gmail.com" [ref=e570] [cursor=pointer]:
+              - /url: mailto:harisarain704@gmail.com
+              - img [ref=e572]
+              - generic [ref=e575]:
+                - paragraph [ref=e576]: Email
+                - paragraph [ref=e577]: harisarain704@gmail.com
+            - link "LinkedIn Connect with me" [ref=e578] [cursor=pointer]:
+              - /url: https://linkedin.com/in/muhammadharisarain
+              - img [ref=e580]
+              - generic [ref=e584]:
+                - paragraph [ref=e585]: LinkedIn
+                - paragraph [ref=e586]: Connect with me
+            - generic [ref=e587]:
+              - img [ref=e589]
+              - generic [ref=e592]:
+                - paragraph [ref=e593]: Location
+                - paragraph [ref=e594]: Lahore, Pakistan
+          - paragraph [ref=e598]: Currently available for freelance projects
+        - generic [ref=e601]:
+          - generic:
+            - img
+          - heading "Ready to Start a Project?" [level=3] [ref=e602]
+          - paragraph [ref=e603]: I'm always excited to work on new projects and collaborate with amazing people. Let's create something great together!
+          - generic [ref=e604]:
+            - button "Send an Email" [ref=e605] [cursor=pointer]:
+              - img [ref=e606]
+              - text: Send an Email
+            - button "Connect on LinkedIn" [ref=e609] [cursor=pointer]:
+              - img [ref=e610]
+              - text: Connect on LinkedIn
+  - contentinfo [ref=e614]:
+    - generic [ref=e615]:
+      - generic [ref=e616]:
+        - generic [ref=e617]:
+          - link "MHA" [ref=e618] [cursor=pointer]:
+            - /url: "#home"
+          - paragraph [ref=e619]: Building digital experiences with passion and precision.
+        - generic [ref=e620]:
+          - link "Home" [ref=e621] [cursor=pointer]:
+            - /url: "#home"
+          - link "About" [ref=e622] [cursor=pointer]:
+            - /url: "#about"
+          - link "Skills" [ref=e623] [cursor=pointer]:
+            - /url: "#skills"
+          - link "Experience" [ref=e624] [cursor=pointer]:
+            - /url: "#experience"
+        - generic [ref=e625]:
+          - link "GitHub" [ref=e626] [cursor=pointer]:
+            - /url: https://github.com/muhammadharisarain
+            - img [ref=e627]
+          - link "LinkedIn" [ref=e630] [cursor=pointer]:
+            - /url: https://linkedin.com/in/muhammadharisarain
+            - img [ref=e631]
+          - link "Email" [ref=e635] [cursor=pointer]:
+            - /url: mailto:harisarain704@gmail.com
+            - img [ref=e636]
+      - paragraph [ref=e640]:
+        - text: © 2026 Muhammad Haris Arain. Made with
+        - img [ref=e641]
+        - text: using Next.js & Tailwind CSS
