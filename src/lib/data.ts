@@ -1,10 +1,10 @@
-import { Code2, Server, Wrench, Database, Cloud } from 'lucide-react'
+import { Code2, Server, Wrench, Database, Cloud, Bot } from 'lucide-react'
 
 export const personalInfo = {
   name: 'Muhammad Haris Arain',
-  title: 'Full Stack Developer',
-  subtitle: 'MERN Stack Specialist',
-  tagline: 'Converting Ideas into Reality with Modern Web Technologies',
+  title: 'Full-Stack Developer',
+  subtitle: 'MERN Stack Specialist · AI-Augmented Engineering',
+  tagline: 'Shipping production web platforms with modern stacks and AI-augmented workflows',
   email: 'harisarain704@gmail.com',
   linkedin: 'https://linkedin.com/in/muhammadharisarain',
   github: 'https://github.com/muhammadharisarain',
@@ -25,10 +25,9 @@ export const stats = [
 ]
 
 export const aboutParagraphs = [
-  "I'm a Full Stack Developer with over 4 years of professional experience at XISLABS, architecting and shipping production-grade web applications for clients across fintech, social, entertainment, and Web3. My core expertise is the MERN stack (MongoDB, Express.js, React.js, Node.js), complemented by strong command of NestJS, Next.js, and TypeScript.",
-  "At XISLABS, I've led end-to-end delivery on 15+ client projects — from Point-of-Sale systems processing live transactions, to real-time social platforms, Web3 gaming dApps, and dynamic form management suites. I believe in writing clean, modular, and maintainable code, guided by SOLID principles, thoughtful testing, and code-review discipline.",
-  "My engineering approach combines technical depth with a strong sense of product and business context. I specialize in designing solutions that solve the immediate need while being structured to scale — clean REST and GraphQL APIs, well-modeled SQL and NoSQL data layers, real-time communication with Socket.io and WebRTC, and deployment pipelines built on AWS, Docker, and CI/CD.",
-  "When I'm not coding, I'm exploring new technologies and sharpening my craft around system design, performance, and developer experience. I'm always excited to partner with teams that value quality, collaboration, and turning ambitious ideas into reliable products.",
+  "I'm a Full-Stack Developer and MERN Stack Specialist with 4+ years at XISLABS, delivering production web platforms across healthcare, retail, Web3, entertainment, and AI-agent domains. Core expertise in the MERN stack (MongoDB, Express, React, Node.js), extended with NestJS, Next.js (App Router, SSR/ISR), and TypeScript.",
+  "I joined XISLABS as a Junior Backend Engineer in October 2022 and grew into a Full-Stack / MERN Developer — now primary engineer on 7 production products including Dentbird (multi-platform dental workflow), Firmament (multi-agent AI orchestration on Claude Code + MCP), and a Korean-market karaoke platform paired with physical machines. I've authored 400+ REST and GraphQL endpoints, integrated Stripe, Moyasar, Twilio, and OAuth 2.0, and cut p95 query latency from ~800ms to ~280ms using Redis caching and composite indexing.",
+  "My focus in 2026 is AI-augmented engineering — building agentic systems with Claude Code, MCP servers, and Anthropic / OpenAI / Gemini APIs, and using AI-assisted workflows for test generation, code review, and deployment automation. I pair that with solid fundamentals: REST and GraphQL design, SQL and NoSQL modeling, real-time systems (Socket.io, WebRTC, Redis), and containerized deployments across AWS, Azure, Digital Ocean, and Vercel.",
 ]
 
 // Each skill: name, simpleicons slug, brand color (hex, no #), proficiency 0-100
@@ -75,7 +74,10 @@ export const skillCategories: {
       { name: 'REST APIs',      slug: 'fastapi',      color: '009688', level: 95 },
       { name: 'GraphQL',        slug: 'graphql',      color: 'E10098', level: 82 },
       { name: 'Socket.io',      slug: 'socketdotio',  color: 'FFFFFF', level: 88 },
+      { name: 'WebRTC',         slug: 'webrtc',       color: '333333', level: 80 },
+      { name: 'Microservices',  slug: 'apachekafka',  color: '231F20', level: 80 },
       { name: 'Redis',          slug: 'redis',        color: 'DC382D', level: 80 },
+      { name: 'OAuth 2.0',      slug: 'auth0',        color: 'EB5424', level: 85 },
       { name: 'JWT',            slug: 'jsonwebtokens',color: '000000', level: 90 },
     ],
   },
@@ -100,11 +102,27 @@ export const skillCategories: {
     accent: '#a855f7',
     skills: [
       { name: 'Docker',         slug: 'docker',       color: '2496ED', level: 85 },
-      { name: 'AWS',            slug: 'amazonaws',    color: 'FF9900', level: 82 },
+      { name: 'AWS',            slug: 'amazonaws',    color: 'FF9900', level: 85 },
+      { name: 'Azure',          slug: 'microsoftazure', color: '0078D4', level: 78 },
+      { name: 'Digital Ocean',  slug: 'digitalocean', color: '0080FF', level: 80 },
       { name: 'Vercel',         slug: 'vercel',       color: 'FFFFFF', level: 92 },
       { name: 'GitHub Actions', slug: 'githubactions',color: '2088FF', level: 85 },
       { name: 'Nginx',          slug: 'nginx',        color: '009639', level: 78 },
       { name: 'Linux',          slug: 'linux',        color: 'FCC624', level: 85 },
+    ],
+  },
+  {
+    title: 'AI Engineering',
+    icon: Bot,
+    color: 'from-indigo-500 to-violet-500',
+    accent: '#6366f1',
+    skills: [
+      { name: 'Claude Code',      slug: 'claude',        color: 'D97757', level: 92 },
+      { name: 'MCP Servers',      slug: 'anthropic',     color: 'D97757', level: 85 },
+      { name: 'Anthropic API',    slug: 'anthropic',     color: 'D97757', level: 88 },
+      { name: 'OpenAI API',       slug: 'openai',        color: '412991', level: 85 },
+      { name: 'Gemini',           slug: 'googlegemini',  color: '8E75B2', level: 80 },
+      { name: 'Agent Orchestration', slug: 'langchain',  color: '1C3C3C', level: 82 },
     ],
   },
   {
@@ -125,42 +143,54 @@ export const skillCategories: {
 
 export const experiences = [
   {
-    title: 'Full Stack Developer',
+    title: 'Full-Stack Developer',
     company: 'XISLABS',
-    period: '2021 - Present',
+    period: 'Oct 2022 - Present',
     description:
-      'Leading full-stack development on production web platforms for clients across fintech, social, entertainment, and Web3. Own features end-to-end — from architecture and API design, through React/Next.js interfaces, to deployment and monitoring.',
+      'Progressed from Junior Backend Engineer to Full-Stack / MERN Developer at XISLABS — now primary engineer on 7 production products and contributor on 10+ across healthcare, retail, Web3, entertainment, and AI-agent platforms.',
     achievements: [
-      'Shipped 15+ client projects from concept to production, including POS, social, and Web3 applications',
-      'Architected REST & GraphQL APIs in Node.js, Express, and NestJS serving millions of requests',
-      'Designed relational (PostgreSQL) and document (MongoDB) schemas tuned for high-throughput workloads',
-      'Built real-time features using Socket.io and WebRTC for live messaging, gaming, and karaoke platforms',
-      'Integrated third-party services — Stripe, AWS S3, Twilio, Firebase, and blockchain/Web3 providers',
-      'Partnered with designers to translate Figma specs into pixel-perfect, accessible React interfaces',
-      'Set up CI/CD pipelines on GitHub Actions with Dockerized deployments to AWS and Vercel',
+      'Primary engineer on 7 production products and contributor on 10+, spanning healthcare, retail, Web3, entertainment, and AI-agent domains',
+      'Authored 400+ REST and GraphQL endpoints in Node.js, Express, and NestJS — secured with JWT and OAuth 2.0',
+      'Integrated Stripe, Moyasar (Saudi), Twilio, AWS S3, Azure, Firebase, and blockchain providers across client products',
+      'Cut p95 query latency from ~800ms to ~280ms (≈65%) on Fatoraty and Tamam via Redis caching and composite PostgreSQL / MongoDB indexes',
+      'Engineered Firmament — a 7-agent AI platform with the "Altitude" orchestrator coordinating planning, development, review, and deployment agents on Claude Code and MCP servers',
+      'Built real-time systems with Socket.io, WebRTC, and Redis — including the Korean-market Karaoke platform paired with physical karaoke machines',
+      'Containerized services with Docker and set up GitHub Actions CI/CD deploying to AWS (EC2, S3, Lambda), Azure, Digital Ocean, and Vercel',
+      'Mentored 3 junior engineers through code reviews and pair programming on a Jira + Kanban workflow with daily stand-ups — onboarding cut from 4 weeks to 2',
     ],
   },
 ]
 
 export const projects = [
   {
-    title: 'Wayfellow',
+    title: 'Dentbird',
     description:
-      'Professional networking platform built for a client at XISLABS — combining job posts, event management, real-time DMs, and a professional feed serving 10K+ users. Scalable Node.js backend with Socket.io messaging and an AWS-hosted media pipeline.',
-    image: '/wayfellow.svg',
-    tags: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Redux', 'AWS'],
-    category: 'Social Platform',
+      'Multi-platform dental workflow SaaS built at XISLABS spanning three roles — clinics, labs, and admin. Clinics place orders with patient info and interactive SVG tooth-chart selection; labs receive real-time notifications, prepare solutions from 3D images, and route back for clinic approval before shipping.',
+    image: '/tamam.png',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'Socket.io', 'AWS'],
+    category: 'Healthcare / Multi-platform SaaS',
     featured: true,
     liveUrl: '#',
     githubUrl: '#',
   },
   {
-    title: 'Fatoraty',
+    title: 'Firmament',
     description:
-      'Comprehensive POS and back-office system developed at XISLABS for retail and F&B clients. Handles inventory, transactions, thermal-printer receipts, and multi-branch sales analytics — deployed across 5+ business locations with offline-first capability.',
-    image: '/fatoraty.png',
-    tags: ['React', 'Node.js', 'MongoDB', 'AWS', 'Redux', 'Thermal Printing'],
-    category: 'Business Solution',
+      'Multi-agent AI platform built at XISLABS — a 7-agent system orchestrated by "Altitude," a planning agent that generates work orders and delegates build, review, and deployment tasks to specialized agents running on Claude Code and MCP servers for end-to-end feature delivery.',
+    image: '/battle-saga.svg',
+    tags: ['Claude Code', 'MCP', 'TypeScript', 'Node.js', 'Anthropic API', 'Agent Orchestration'],
+    category: 'AI Agent Orchestration',
+    featured: true,
+    liveUrl: '#',
+    githubUrl: '#',
+  },
+  {
+    title: 'Karaoke System',
+    description:
+      'Korean-market karaoke platform built at XISLABS — a companion web/mobile app to physical karaoke machines that captures hardware performance data and renders real-time pitch scoring with 1-vs-1 and 1-vs-many battle modes, powered by Socket.io, WebRTC, and Redis live leaderboards.',
+    image: '/karaoke.svg',
+    tags: ['React', 'Node.js', 'WebRTC', 'Socket.io', 'Redis', 'Audio API'],
+    category: 'Entertainment (Korea) — Hardware + Software',
     featured: true,
     liveUrl: '#',
     githubUrl: '#',
@@ -177,12 +207,23 @@ export const projects = [
     githubUrl: '#',
   },
   {
-    title: 'Battle Saga',
+    title: 'Fatoraty',
     description:
-      'Web3 gaming platform developed at XISLABS with on-chain battles, NFT rewards, and an in-game token economy supporting 2K+ active players. Ethereum smart contracts handle matchmaking and payouts, with a React + Web3.js frontend.',
-    image: '/battle-saga.svg',
-    tags: ['React', 'Solidity', 'Web3.js', 'Ethereum', 'NFT', 'Smart Contracts'],
-    category: 'Web3 / Blockchain',
+      'Comprehensive POS and back-office system developed at XISLABS for retail and F&B clients. Handles inventory, transactions, thermal-printer receipts, and multi-branch sales analytics — deployed across 5+ business locations with offline-first capability.',
+    image: '/fatoraty.png',
+    tags: ['React', 'Node.js', 'MongoDB', 'AWS', 'Redux', 'Thermal Printing'],
+    category: 'Retail POS',
+    featured: true,
+    liveUrl: '#',
+    githubUrl: '#',
+  },
+  {
+    title: 'Wayfellow',
+    description:
+      'Professional networking platform built for a client at XISLABS — combining job posts, event management, real-time DMs, and a professional feed serving 10K+ users. Scalable Node.js backend with Socket.io messaging and an AWS-hosted media pipeline.',
+    image: '/wayfellow.svg',
+    tags: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Redux', 'AWS'],
+    category: 'Social / Networking',
     featured: true,
     liveUrl: '#',
     githubUrl: '#',
@@ -193,18 +234,7 @@ export const projects = [
       'Marketing analytics tool built at XISLABS that helps teams estimate campaign reach, CTA conversion, and ROI. Combines historical data with ML models to forecast performance, used by 3 enterprise clients to plan 100+ campaigns.',
     image: '/campaign-estimator.png',
     tags: ['React', 'TypeScript', 'Node.js', 'Chart.js', 'ML', 'Analytics'],
-    category: 'Business Analytics',
-    featured: true,
-    liveUrl: '#',
-    githubUrl: '#',
-  },
-  {
-    title: 'Karaoke System',
-    description:
-      'Karaoke platform developed at XISLABS for Korean and Japanese markets with 5K+ active users. Features 1-on-1 and 1-to-many battle modes, AI pitch scoring, weekly prize competitions, and live leaderboards powered by WebRTC and Redis.',
-    image: '/karaoke.svg',
-    tags: ['React', 'Node.js', 'WebRTC', 'Socket.io', 'Audio API', 'Redis'],
-    category: 'Entertainment',
+    category: 'Marketing Analytics',
     featured: true,
     liveUrl: '#',
     githubUrl: '#',
