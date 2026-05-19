@@ -42,31 +42,31 @@ const s = StyleSheet.create({
   sidebar: {
     width: SIDEBAR_W,
     backgroundColor: SB.bg,
-    paddingTop: 22,
-    paddingBottom: 22,
-    paddingHorizontal: 16,
+    paddingTop: 24,
+    paddingBottom: 24,
+    paddingHorizontal: 18,
   },
   sbName: {
-    fontSize: 13,
+    fontSize: 13.5,
     fontFamily: 'Helvetica-Bold',
     color: SB.heading,
     marginBottom: 3,
-    lineHeight: 1.18,
+    lineHeight: 1.2,
   },
   sbNameAccent: {
-    width: 24,
+    width: 26,
     height: 2,
     backgroundColor: SB.accent,
-    marginTop: 3,
-    marginBottom: 7,
+    marginTop: 4,
+    marginBottom: 8,
     borderRadius: 1,
   },
   sbRole: {
     fontSize: 9,
     color: SB.accent,
     fontFamily: 'Helvetica-Bold',
-    marginBottom: 16,
-    lineHeight: 1.3,
+    marginBottom: 18,
+    lineHeight: 1.35,
     letterSpacing: 0.3,
   },
   sbDivider: {
@@ -79,7 +79,7 @@ const s = StyleSheet.create({
     fontFamily: 'Helvetica-Bold',
     color: SB.accent,
     letterSpacing: 1.3,
-    marginBottom: 8,
+    marginBottom: 9,
   },
   sbItem: {
     flexDirection: 'row',
@@ -87,7 +87,7 @@ const s = StyleSheet.create({
     marginBottom: 4,
   },
   sbContactItem: {
-    marginBottom: 5,
+    marginBottom: 6,
   },
   sbItemLabel: {
     fontSize: 6.5,
@@ -100,20 +100,20 @@ const s = StyleSheet.create({
   sbItemText: {
     fontSize: 8,
     color: SB.text,
-    lineHeight: 1.35,
+    lineHeight: 1.4,
   },
   sbLink: {
     fontSize: 8,
     color: SB.accent,
     textDecoration: 'none',
-    lineHeight: 1.35,
+    lineHeight: 1.4,
   },
-  sbSkillGroup: { marginBottom: 6 },
+  sbSkillGroup: { marginBottom: 7 },
   sbSkillGroupLabel: {
     fontSize: 7.5,
     fontFamily: 'Helvetica-Bold',
     color: SB.heading,
-    marginBottom: 2.5,
+    marginBottom: 3,
   },
   sbSkillList: {
     fontSize: 7.5,
@@ -125,16 +125,16 @@ const s = StyleSheet.create({
   main: {
     flex: 1,
     backgroundColor: MN.bg,
-    paddingTop: 22,
-    paddingBottom: 22,
-    paddingLeft: 22,
-    paddingRight: 24,
+    paddingTop: 26,
+    paddingBottom: 26,
+    paddingLeft: 24,
+    paddingRight: 26,
   },
-  sectionWrap: { marginBottom: 10 },
+  sectionWrap: { marginBottom: 14 },
   sectionHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 6,
+    marginBottom: 7,
   },
   sectionBar: {
     width: 3,
@@ -152,40 +152,40 @@ const s = StyleSheet.create({
   divider: {
     height: 0.5,
     backgroundColor: MN.divider,
-    marginBottom: 9,
+    marginBottom: 10,
     marginTop: -1,
   },
 
   // summary
-  summary: { fontSize: 8.5, color: MN.body, lineHeight: 1.55 },
+  summary: { fontSize: 9, color: MN.body, lineHeight: 1.6 },
 
   // experience
-  expBlock: { marginBottom: 6 },
+  expBlock: { marginBottom: 8 },
   expRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    marginBottom: 1,
+    marginBottom: 2,
   },
-  expJob:     { fontSize: 9.5, fontFamily: 'Helvetica-Bold', color: MN.heading },
+  expJob:     { fontSize: 10, fontFamily: 'Helvetica-Bold', color: MN.heading },
   expDate:    { fontSize: 8, color: MN.muted, fontFamily: 'Helvetica-Oblique', flexShrink: 0, marginLeft: 8 },
   expCompany: {
-    fontSize: 8.5,
+    fontSize: 9,
     color: MN.accent,
     fontFamily: 'Helvetica-Bold',
-    marginBottom: 3,
+    marginBottom: 5,
   },
-  bullet:     { flexDirection: 'row', marginBottom: 2.5 },
+  bullet:     { flexDirection: 'row', marginBottom: 4 },
   bulletDot:  {
     width: 2.5,
     height: 2.5,
     borderRadius: 1.25,
     backgroundColor: MN.accent,
-    marginTop: 4,
-    marginRight: 5,
+    marginTop: 4.5,
+    marginRight: 6,
     flexShrink: 0,
   },
-  bulletText: { flex: 1, fontSize: 8, color: MN.body, lineHeight: 1.5 },
+  bulletText: { flex: 1, fontSize: 8.5, color: MN.body, lineHeight: 1.6 },
 
   // education
   eduBlock:  { marginBottom: 6 },
@@ -194,13 +194,13 @@ const s = StyleSheet.create({
   eduDate:   { fontSize: 7.5, color: MN.muted, fontFamily: 'Helvetica-Oblique', flexShrink: 0, marginLeft: 8 },
   eduInst:   { fontSize: 7.5, color: MN.muted, fontFamily: 'Helvetica-Oblique' },
 
-  // projects (compact list for single-page)
-  projBlock: { marginBottom: 5 },
+  // projects
+  projBlock: { marginBottom: 9 },
   projRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 2,
+    marginBottom: 3,
   },
   projTitleWrap: { flexDirection: 'row', alignItems: 'center', flex: 1 },
   projDot: {
@@ -208,23 +208,23 @@ const s = StyleSheet.create({
     height: 3,
     borderRadius: 1.5,
     backgroundColor: MN.accent,
-    marginRight: 5,
+    marginRight: 6,
     flexShrink: 0,
   },
-  projTitle:   { fontSize: 8.5, fontFamily: 'Helvetica-Bold', color: MN.heading },
-  projSep:     { fontSize: 8, color: MN.muted, marginHorizontal: 4 },
-  projCat:     { fontSize: 7.5, color: MN.muted, fontFamily: 'Helvetica-Oblique' },
-  projDesc:    { fontSize: 7.5, color: MN.body, lineHeight: 1.5, paddingLeft: 8, marginBottom: 3 },
-  projTechRow: { flexDirection: 'row', flexWrap: 'wrap', paddingLeft: 8 },
+  projTitle:   { fontSize: 9, fontFamily: 'Helvetica-Bold', color: MN.heading },
+  projSep:     { fontSize: 8, color: MN.muted, marginHorizontal: 5 },
+  projCat:     { fontSize: 8, color: MN.muted, fontFamily: 'Helvetica-Oblique' },
+  projDesc:    { fontSize: 8, color: MN.body, lineHeight: 1.6, paddingLeft: 9, marginBottom: 4 },
+  projTechRow: { flexDirection: 'row', flexWrap: 'wrap', paddingLeft: 9 },
   projTechChip: {
     backgroundColor: MN.tag,
     borderRadius: 2,
-    paddingHorizontal: 4.5,
-    paddingVertical: 1.8,
-    marginRight: 3,
-    marginBottom: 2.5,
+    paddingHorizontal: 5,
+    paddingVertical: 2.2,
+    marginRight: 3.5,
+    marginBottom: 3,
   },
-  projTechText: { fontSize: 6.5, color: MN.tagText },
+  projTechText: { fontSize: 6.8, color: MN.tagText },
 
   // ── Footer ──
   footer: {
@@ -236,6 +236,7 @@ const s = StyleSheet.create({
     justifyContent: 'space-between',
   },
   footerText: { fontSize: 7, color: '#9ca3af' },
+  pageNum: { fontSize: 7, color: '#9ca3af' },
 })
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -343,7 +344,7 @@ const cv = {
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 function SbSection({ label }: { label: string }) {
   return (
-    <View style={{ marginBottom: 8 }}>
+    <View style={{ marginBottom: 9 }}>
       <View style={s.sbDivider} />
       <Text style={s.sbSectionLabel}>{label}</Text>
     </View>
@@ -445,14 +446,14 @@ export function CVDocument() {
           {/* EDUCATION (moved to sidebar to save main column space) */}
           <SbSection label="EDUCATION" />
           {cv.education.map((edu, i) => (
-            <View key={i} style={{ marginBottom: 6 }}>
-              <Text style={{ fontSize: 7.5, fontFamily: 'Helvetica-Bold', color: SB.heading, lineHeight: 1.3 }}>
+            <View key={i} style={{ marginBottom: 8 }}>
+              <Text style={{ fontSize: 7.5, fontFamily: 'Helvetica-Bold', color: SB.heading, lineHeight: 1.4, marginBottom: 2 }}>
                 {edu.degree}
               </Text>
-              <Text style={{ fontSize: 7, color: SB.muted, lineHeight: 1.3, fontFamily: 'Helvetica-Oblique' }}>
+              <Text style={{ fontSize: 7, color: SB.muted, lineHeight: 1.4, fontFamily: 'Helvetica-Oblique', marginBottom: 1 }}>
                 {edu.institution}
               </Text>
-              <Text style={{ fontSize: 6.5, color: SB.muted, lineHeight: 1.3 }}>
+              <Text style={{ fontSize: 6.5, color: SB.muted, lineHeight: 1.4 }}>
                 {edu.period}
               </Text>
             </View>
@@ -517,10 +518,15 @@ export function CVDocument() {
           </View>
         </View>
 
-        {/* Footer */}
-        <View style={s.footer}>
+        {/* Footer with page number */}
+        <View style={s.footer} fixed>
           <Text style={s.footerText}>Muhammad Haris Arain — Curriculum Vitae</Text>
+          <Text
+            style={s.pageNum}
+            render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}
+          />
         </View>
+
       </Page>
     </Document>
   )
