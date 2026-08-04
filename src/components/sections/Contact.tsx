@@ -134,25 +134,25 @@ export default function Contact() {
                     with amazing people. Let&apos;s create something great together!
                   </p>
 
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex flex-col sm:flex-row gap-3">
                     <Button
                       variant="primary"
-                      size="lg"
+                      size="md"
                       onClick={() =>
                         window.open(`mailto:${personalInfo.email}`, '_blank')
                       }
                     >
-                      <Send size={18} />
+                      <Send size={16} />
                       Send an Email
                     </Button>
                     <Button
                       variant="secondary"
-                      size="lg"
+                      size="md"
                       onClick={() =>
                         window.open(personalInfo.linkedin, '_blank')
                       }
                     >
-                      <Linkedin size={18} />
+                      <Linkedin size={16} />
                       Connect on LinkedIn
                     </Button>
                   </div>

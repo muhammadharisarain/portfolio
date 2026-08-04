@@ -16,6 +16,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         className={cn(
           'inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-300 active:scale-95',
+          // Labels must never wrap mid-phrase — "Connect on LinkedIn" was
+          // breaking onto two lines inside narrow grid columns.
+          'whitespace-nowrap',
           {
             'bg-primary text-background hover:bg-primary-dark hover:shadow-glow':
               variant === 'primary',
