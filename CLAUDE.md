@@ -35,6 +35,16 @@ This is enforced, not aspirational: the homepage, `src/app/resume/`, and `src/li
 
 `certifications` is intentionally an empty array; `ResumeEducation` hides that block while it is empty. Add entries to `data.ts` to make it appear — no component change needed.
 
+### Theming (dark + light)
+
+Both themes are driven by `data-theme` on `<html>`, set by `themeInitScript` in `src/components/ThemeProvider.tsx` — a blocking `<head>` script that runs before first paint so there is no flash. Resolution order: stored `localStorage.theme` → OS `prefers-color-scheme` → dark.
+
+**Do not add `dark:` variants.** Colors resolve through CSS variables (`--c-*`, space-separated RGB triplets) defined in `globals.css` and mapped in `tailwind.config.ts` via `rgb(var(--c-x) / <alpha-value>)`. Changing `data-theme` repaints the whole site with no component changes.
+
+`white` and `gray-*` are deliberately overridden and are **semantic, not literal**: in light mode `white` resolves to near-black, so `text-white` still means "highest-contrast text" and `bg-white/5` still means "barely-there contrast tint". The gray ramp keeps its meaning too — `gray-200` is always the most prominent secondary tone, `gray-500` the faintest.
+
+`#00ff88` is dark-mode only. It is ~1.3:1 on white, so light mode uses `#047857` (5.24:1). Any new accent color needs a light-mode counterpart in both `:root` blocks.
+
 ### Fonts
 
 Three families, each with a job: Space Grotesk (`font-display`) for headings, Inter (`font-sans`) for body, JetBrains Mono (`font-mono`) for dates, metric numerals, and tech tags. All registered in `src/app/layout.tsx` and `tailwind.config.ts`.

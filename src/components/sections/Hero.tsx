@@ -1,27 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { MapPin, Mail, Calendar, Briefcase, Download, Send, Github, Linkedin, Loader2 } from 'lucide-react'
+import { MapPin, Mail, Calendar, Briefcase, FileText, Send, Github, Linkedin } from 'lucide-react'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { personalInfo, stats } from '@/lib/data'
 import { Button, AnimatedCounter, Card } from '@/components/ui'
 
 export default function Hero() {
-  const [downloading, setDownloading] = useState(false)
-
-  const handleDownloadCV = async () => {
-    if (downloading) return
-    setDownloading(true)
-    try {
-      const { downloadCV } = await import('@/lib/downloadCV')
-      await downloadCV()
-    } catch {
-      // silent
-    } finally {
-      setDownloading(false)
-    }
-  }
+  const router = useRouter()
 
   return (
     <section
@@ -195,15 +182,10 @@ export default function Hero() {
                     <Button
                       variant="primary"
                       size="lg"
-                      onClick={handleDownloadCV}
-                      disabled={downloading}
-                      className={downloading ? 'cursor-wait opacity-80' : ''}
+                      onClick={() => router.push('/resume')}
                     >
-                      {downloading
-                        ? <Loader2 size={18} className="animate-spin" />
-                        : <Download size={18} />
-                      }
-                      {downloading ? 'Preparing CV…' : 'Download CV'}
+                      <FileText size={18} />
+                      View Resume
                     </Button>
                     <Button
                       variant="secondary"

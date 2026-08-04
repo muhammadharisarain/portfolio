@@ -3,13 +3,71 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --primary: #00ff88;
-    --primary-dark: #00cc6e;
-    --background: #0a0e17;
-    --background-light: #111827;
-    --foreground: #ffffff;
-    --muted: #94a3b8;
+  /*
+   * Theme tokens are space-separated RGB triplets so Tailwind's
+   * `rgb(var(--c-x) / <alpha-value>)` syntax keeps opacity modifiers working —
+   * that is what lets `bg-white/5`, `border-white/10` etc. flip with the theme
+   * without touching a single component file.
+   *
+   * The `white` and `gray-*` scales are semantic, not literal: in light mode
+   * `white` resolves to near-black, so `text-white` still means "highest
+   * contrast text" and `bg-white/5` still means "barely-there contrast tint".
+   * The gray ramp keeps its meaning too — gray-200 is always the most
+   * prominent secondary tone, gray-500 always the faintest.
+   */
+  :root,
+  [data-theme='dark'] {
+    color-scheme: dark;
+
+    --c-white: 255 255 255;
+    --c-gray-200: 229 231 235;
+    --c-gray-300: 209 213 219;
+    --c-gray-400: 156 163 175;
+    --c-gray-500: 107 114 128;
+    --c-gray-600: 75 85 99;
+
+    --c-primary: 0 255 136;
+    --c-primary-dark: 0 204 110;
+    --c-primary-light: 51 255 159;
+
+    --c-background: 10 14 23;
+    --c-background-light: 17 24 39;
+    --c-background-lighter: 31 41 55;
+
+    --c-glow: 0 255 136;
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --shadow-card-hover: 0 8px 40px rgba(0, 0, 0, 0.4);
+
+    --grad-1: #00ff88;
+    --grad-2: #3b82f6;
+    --grad-3: #8b5cf6;
+  }
+
+  [data-theme='light'] {
+    color-scheme: light;
+
+    --c-white: 15 23 42;
+    --c-gray-200: 30 41 59;
+    --c-gray-300: 51 65 85;
+    --c-gray-400: 71 85 105;
+    --c-gray-500: 100 116 139;
+    --c-gray-600: 148 163 184;
+
+    --c-primary: 4 120 87;
+    --c-primary-dark: 6 95 70;
+    --c-primary-light: 5 150 105;
+
+    --c-background: 248 250 252;
+    --c-background-light: 255 255 255;
+    --c-background-lighter: 241 245 249;
+
+    --c-glow: 4 120 87;
+    --shadow-card: 0 4px 20px rgba(15, 23, 42, 0.08);
+    --shadow-card-hover: 0 8px 40px rgba(15, 23, 42, 0.12);
+
+    --grad-1: #047857;
+    --grad-2: #1d4ed8;
+    --grad-3: #6d28d9;
   }
 
   * {
@@ -25,6 +83,7 @@
   body {
     @apply bg-background text-white antialiased;
     min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   ::selection {
@@ -68,7 +127,12 @@
   /* Gradient Text */
   .gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #00ff88, #3b82f6, #8b5cf6);
+    background-image: linear-gradient(
+      135deg,
+      var(--grad-1),
+      var(--grad-2),
+      var(--grad-3)
+    );
     background-size: 200% 200%;
     animation: gradient 8s ease infinite;
   }
@@ -181,10 +245,10 @@
   .text-gradient-animate {
     background: linear-gradient(
       to right,
-      #00ff88,
-      #3b82f6,
-      #8b5cf6,
-      #00ff88
+      var(--grad-1),
+      var(--grad-2),
+      var(--grad-3),
+      var(--grad-1)
     );
     background-size: 300% 100%;
     -webkit-background-clip: text;
@@ -226,10 +290,10 @@
 
   @keyframes pulse-glow {
     0%, 100% {
-      box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+      box-shadow: 0 0 20px rgb(var(--c-glow) / 0.3);
     }
     50% {
-      box-shadow: 0 0 40px rgba(0, 255, 136, 0.6);
+      box-shadow: 0 0 40px rgb(var(--c-glow) / 0.6);
     }
   }
 

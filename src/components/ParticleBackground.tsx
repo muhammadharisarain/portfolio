@@ -4,9 +4,18 @@ import { useEffect, useMemo, useState } from 'react'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
 import type { ISourceOptions } from '@tsparticles/engine'
+import { useTheme } from './ThemeProvider'
 
 export default function ParticleBackground() {
   const [init, setInit] = useState(false)
+  const { theme } = useTheme()
+
+  // Neon green vanishes against a light background, so light mode uses the
+  // deep emerald accent and slightly lower opacity to stay unobtrusive.
+  const isLight = theme === 'light'
+  const particleColor = isLight ? '#047857' : '#00ff88'
+  const particleOpacity = isLight ? 0.22 : 0.3
+  const linkOpacity = isLight ? 0.1 : 0.15
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -40,7 +49,7 @@ export default function ParticleBackground() {
             distance: 140,
             links: {
               opacity: 0.5,
-              color: '#00ff88',
+              color: particleColor,
             },
           },
           push: {
@@ -50,13 +59,13 @@ export default function ParticleBackground() {
       },
       particles: {
         color: {
-          value: '#00ff88',
+          value: particleColor,
         },
         links: {
-          color: '#00ff88',
+          color: particleColor,
           distance: 150,
           enable: true,
-          opacity: 0.15,
+          opacity: linkOpacity,
           width: 1,
         },
         move: {
@@ -76,7 +85,7 @@ export default function ParticleBackground() {
           value: 80,
         },
         opacity: {
-          value: 0.3,
+          value: particleOpacity,
         },
         shape: {
           type: 'circle',
@@ -87,7 +96,7 @@ export default function ParticleBackground() {
       },
       detectRetina: true,
     }),
-    []
+    [particleColor, particleOpacity, linkOpacity]
   )
 
   if (!init) {

@@ -15,6 +15,7 @@ import {
 } from 'lucide-react'
 import { personalInfo, availability } from '@/lib/data'
 import { cn } from '@/lib/utils'
+import ThemeToggle from '@/components/ThemeToggle'
 
 function Badge({ children }: { children: React.ReactNode }) {
   return (
@@ -52,12 +53,15 @@ export default function ResumeHeader() {
 
   return (
     <header className="mb-16">
-      <a
-        href="/"
-        className="print:hidden mb-8 inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-primary"
-      >
-        <ArrowLeft size={15} /> Back to portfolio
-      </a>
+      <div className="mb-8 flex items-center justify-between print:hidden">
+        <a
+          href="/"
+          className="inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-primary"
+        >
+          <ArrowLeft size={15} /> Back to portfolio
+        </a>
+        <ThemeToggle />
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 16 }}

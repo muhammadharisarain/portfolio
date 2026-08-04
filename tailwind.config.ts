@@ -6,19 +6,34 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class',
+  darkMode: ['selector', '[data-theme="dark"]'],
   theme: {
     extend: {
       colors: {
+        // Every token below resolves through a CSS variable set in globals.css,
+        // so switching [data-theme] repaints the whole site without any
+        // component needing a `dark:` variant. The `<alpha-value>` placeholder
+        // is what keeps opacity modifiers (bg-white/5, border-white/10) working.
+        //
+        // `white` and `gray` are overridden deliberately: they are semantic
+        // here, not literal. In light mode `white` resolves to near-black.
+        white: 'rgb(var(--c-white) / <alpha-value>)',
+        gray: {
+          200: 'rgb(var(--c-gray-200) / <alpha-value>)',
+          300: 'rgb(var(--c-gray-300) / <alpha-value>)',
+          400: 'rgb(var(--c-gray-400) / <alpha-value>)',
+          500: 'rgb(var(--c-gray-500) / <alpha-value>)',
+          600: 'rgb(var(--c-gray-600) / <alpha-value>)',
+        },
         primary: {
-          DEFAULT: '#00ff88',
-          dark: '#00cc6e',
-          light: '#33ff9f',
+          DEFAULT: 'rgb(var(--c-primary) / <alpha-value>)',
+          dark: 'rgb(var(--c-primary-dark) / <alpha-value>)',
+          light: 'rgb(var(--c-primary-light) / <alpha-value>)',
         },
         background: {
-          DEFAULT: '#0a0e17',
-          light: '#111827',
-          lighter: '#1f2937',
+          DEFAULT: 'rgb(var(--c-background) / <alpha-value>)',
+          light: 'rgb(var(--c-background-light) / <alpha-value>)',
+          lighter: 'rgb(var(--c-background-lighter) / <alpha-value>)',
         },
         accent: {
           blue: '#3b82f6',
@@ -76,8 +91,8 @@ const config: Config = {
           '50%': { transform: 'translateY(-20px)' },
         },
         pulseGlow: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(0, 255, 136, 0.3)' },
-          '50%': { boxShadow: '0 0 40px rgba(0, 255, 136, 0.6)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgb(var(--c-glow) / 0.3)' },
+          '50%': { boxShadow: '0 0 40px rgb(var(--c-glow) / 0.6)' },
         },
         gradient: {
           '0%, 100%': { backgroundPosition: '0% 50%' },
@@ -95,17 +110,20 @@ const config: Config = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'hero-gradient': 'linear-gradient(135deg, #0a0e17 0%, #1a1f2e 50%, #0a0e17 100%)',
-        'card-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
-        'primary-gradient': 'linear-gradient(135deg, #00ff88 0%, #00cc6e 50%, #00ff88 100%)',
-        'text-gradient': 'linear-gradient(135deg, #00ff88, #3b82f6, #8b5cf6)',
+        'hero-gradient':
+          'linear-gradient(135deg, rgb(var(--c-background)) 0%, rgb(var(--c-background-lighter)) 50%, rgb(var(--c-background)) 100%)',
+        'card-gradient':
+          'linear-gradient(135deg, rgb(var(--c-white) / 0.1) 0%, rgb(var(--c-white) / 0.05) 100%)',
+        'primary-gradient':
+          'linear-gradient(135deg, rgb(var(--c-primary)) 0%, rgb(var(--c-primary-dark)) 50%, rgb(var(--c-primary)) 100%)',
+        'text-gradient': 'linear-gradient(135deg, var(--grad-1), var(--grad-2), var(--grad-3))',
       },
       boxShadow: {
-        'glow': '0 0 20px rgba(0, 255, 136, 0.3)',
-        'glow-lg': '0 0 40px rgba(0, 255, 136, 0.4)',
-        'glow-xl': '0 0 60px rgba(0, 255, 136, 0.5)',
-        'card': '0 4px 20px rgba(0, 0, 0, 0.3)',
-        'card-hover': '0 8px 40px rgba(0, 0, 0, 0.4)',
+        'glow': '0 0 20px rgb(var(--c-glow) / 0.3)',
+        'glow-lg': '0 0 40px rgb(var(--c-glow) / 0.4)',
+        'glow-xl': '0 0 60px rgb(var(--c-glow) / 0.5)',
+        'card': 'var(--shadow-card)',
+        'card-hover': 'var(--shadow-card-hover)',
       },
       backdropBlur: {
         xs: '2px',

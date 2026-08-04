@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { navLinks, personalInfo } from '@/lib/data'
 import { cn } from '@/lib/utils'
+import ThemeToggle from '@/components/ThemeToggle'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -102,6 +103,7 @@ export default function Navbar() {
           {/* Route links — plain anchors, not handleNavClick targets, which
               does querySelector() for in-page hash scrolling. */}
           <div className="hidden md:flex items-center gap-5">
+            <ThemeToggle />
             <a
               href="/resume"
               className="text-sm font-medium text-gray-300 transition-colors hover:text-primary"
@@ -117,13 +119,16 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-white hover:text-primary transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-white hover:text-primary transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </motion.nav>
 
