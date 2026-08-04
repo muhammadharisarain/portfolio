@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  serverExternalPackages: ['@react-pdf/renderer'],
+  // Next.js 14 key. (`serverExternalPackages` is the Next 15 name and is
+  // silently ignored here — it produced an "Unrecognized key" build warning.)
+  experimental: {
+    serverComponentsExternalPackages: ['@react-pdf/renderer'],
+  },
   images: {
     remotePatterns: [
       {
