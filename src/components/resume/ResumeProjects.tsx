@@ -18,9 +18,12 @@ export default function ResumeProjects() {
             transition={{ duration: 0.35, delay: (i % 2) * 0.06 }}
             className="break-inside-avoid rounded-xl border border-white/10 bg-background-light/50 p-5"
           >
-            <div className="flex items-baseline justify-between gap-3">
+            {/* flex-wrap, and no shrink-0 on the category: long values such as
+                "Entertainment (Korea) — Hardware + Software" otherwise force
+                horizontal page scroll on narrow viewports. */}
+            <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
               <h3 className="font-display font-bold text-white">{p.title}</h3>
-              <span className="shrink-0 font-mono text-[10px] uppercase tracking-wide text-gray-500">
+              <span className="font-mono text-[10px] uppercase tracking-wide text-gray-500">
                 {p.category}
               </span>
             </div>
