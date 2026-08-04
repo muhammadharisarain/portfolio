@@ -4,9 +4,11 @@ import { motion } from 'framer-motion'
 import { projects } from '@/lib/data'
 import ResumeSectionHeader from './ResumeSectionHeader'
 
+// print:break-before-page on the section — projects start a fresh sheet when
+// printing so the 8 cards are not split across the page boundary mid-section.
 export default function ResumeProjects() {
   return (
-    <section className="mb-16">
+    <section className="mb-16 print:break-before-page">
       <ResumeSectionHeader label="Key Projects" id="projects" />
       <div className="grid gap-4 md:grid-cols-2">
         {projects.map((p, i) => (

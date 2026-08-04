@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useReducedMotion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 interface AnimatedCounterProps {
@@ -20,8 +20,15 @@ export default function AnimatedCounter({
   const [count, setCount] = useState(0)
   const ref = useRef<HTMLSpanElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const prefersReducedMotion = useReducedMotion()
 
   useEffect(() => {
+    // Respect prefers-reduced-motion: show the final value, skip the count-up.
+    if (isInView && prefersReducedMotion) {
+      setCount(value)
+      return
+    }
+
     if (isInView && value > 0) {
       let start = 0
       const end = value
@@ -39,15 +46,15 @@ export default function AnimatedCounter({
     }
 
     if (isInView) setCount(value)
-  }, [isInView, value, duration])
+  }, [isInView, value, duration, prefersReducedMotion])
 
   return (
     <motion.span
       ref={ref}
-      initial={{ opacity: 0, scale: 0.5 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.5 }}
+      whileInView={prefersReducedMotion ? undefined : { opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: prefersReducedMotion ? 0 : 0.5 }}
       className={cn(
         'text-4xl md:text-5xl font-display font-bold text-primary',
         className
