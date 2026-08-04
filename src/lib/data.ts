@@ -146,6 +146,8 @@ export const experiences = [
     title: 'Full-Stack Developer',
     company: 'XISLABS',
     period: 'Oct 2022 - Present',
+    employmentType: 'Full Time',
+    tech: ['Node.js', 'NestJS', 'Express', 'React', 'Next.js', 'TypeScript', 'PostgreSQL', 'MongoDB', 'Redis', 'Docker', 'AWS'],
     description:
       'Progressed from Junior Backend Engineer to Full-Stack / MERN Developer at XISLABS — now primary engineer on 7 production products and contributor on 10+ across healthcare, retail, Web3, entertainment, and AI-agent platforms.',
     achievements: [
@@ -239,6 +241,17 @@ export const projects = [
     liveUrl: '#',
     githubUrl: '#',
   },
+  {
+    title: 'Battle Saga',
+    description:
+      'Web3 gaming platform built at XISLABS with smart-contract integration — cryptocurrency tokens for in-game purchases, on-chain battles, and NFT rewards, with wallet connectivity and Ethereum contract calls from a React frontend.',
+    image: '/battle-saga.svg',
+    tags: ['React', 'Solidity', 'Web3.js', 'Ethereum', 'NFT', 'Smart Contracts'],
+    category: 'Web3 / Blockchain',
+    featured: true,
+    liveUrl: '#',
+    githubUrl: '#',
+  },
 ]
 
 export const navLinks = [
@@ -249,3 +262,81 @@ export const navLinks = [
   { href: '#projects', label: 'Projects' },
   { href: '#contact', label: 'Contact' },
 ]
+
+// ─── Resume page data ────────────────────────────────────────────────────────
+// Consumed by src/app/resume/ and src/lib/cv-document.tsx (the PDF).
+
+export const availability = {
+  freelance: true,
+  fullTime: true,
+  locationLine: 'Lahore, Pakistan · Remote Worldwide',
+}
+
+export const resumeSummary =
+  'MERN Stack Specialist and Full-Stack Developer with 4+ years delivering production web platforms across healthcare, fintech, retail, entertainment, and AI-agent domains. Primary engineer on 7 products and contributor on 10+, with 400+ REST/GraphQL endpoints authored. Strong in Node.js, NestJS, React, Next.js (App Router, SSR/ISR), PostgreSQL, MongoDB, and Redis — plus OAuth 2.0, microservices, and AI-augmented workflows on Claude Code and MCP servers.'
+
+export type ResumeMetric = {
+  value: number
+  suffix: string
+  label: string
+  detail: string
+}
+
+export const resumeMetrics: ResumeMetric[] = [
+  { value: 400, suffix: '+', label: 'API Endpoints',      detail: 'REST & GraphQL across Node.js, Express, NestJS' },
+  { value: 7,   suffix: '',  label: 'Products Led',       detail: 'Primary engineer on production systems' },
+  { value: 65,  suffix: '%', label: 'Latency Cut',        detail: 'p95 ~800ms → ~280ms via Redis + composite indexes' },
+  { value: 10,  suffix: '+', label: 'Products Shipped',   detail: 'Contributor across healthcare, retail, Web3, AI' },
+  { value: 3,   suffix: '',  label: 'Engineers Mentored', detail: 'Onboarding cut from 4 weeks to 2' },
+]
+
+export type TimelineEntry = {
+  role: string
+  period: string
+  note: string
+  current?: boolean
+}
+
+// Only documented milestones. Do not add intermediate steps without real dates.
+export const careerTimeline: TimelineEntry[] = [
+  {
+    role: 'Junior Backend Engineer',
+    period: 'Oct 2022',
+    note: 'Joined XISLABS on the backend team — Node.js, Express, and MongoDB service work.',
+  },
+  {
+    role: 'Full-Stack / MERN Developer',
+    period: 'Present',
+    note: 'Primary engineer on 7 production products and contributor on 10+, spanning healthcare, retail, Web3, entertainment, and AI-agent platforms.',
+    current: true,
+  },
+]
+
+export type Education = {
+  degree: string
+  institution: string
+  period: string
+  detail?: string
+}
+
+export const education: Education[] = [
+  {
+    degree: 'BS Computer Science',
+    institution: 'Virtual University of Pakistan',
+    period: '2022 – 2026',
+  },
+  {
+    degree: 'Intermediate — Pre-Engineering (FSc)',
+    institution: 'Superior College of Science, Hyderabad',
+    period: 'Completed 2022',
+  },
+]
+
+export type Certification = {
+  name: string
+  issuer: string
+  year: string
+}
+
+// Empty by design — ResumeEducation hides the block while this is empty.
+export const certifications: Certification[] = []
