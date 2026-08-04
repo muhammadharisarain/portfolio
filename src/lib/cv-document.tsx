@@ -7,6 +7,13 @@ import {
   Link,
   StyleSheet,
 } from '@react-pdf/renderer'
+import {
+  personalInfo,
+  experiences,
+  projects,
+  education,
+  resumeSummary,
+} from './data'
 
 // ─── Palette — ATS-safe: light sidebar, dark text everywhere ─────────────────
 const ACCENT = '#0284c7' // single primary accent (sky-600)
@@ -241,50 +248,30 @@ const s = StyleSheet.create({
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const cv = {
-  name:        'Muhammad Haris Arain',
-  title:       'Full-Stack Developer',
-  phone:       '+92 335 319 1421',
-  email:       'harisarain704@gmail.com',
-  location:    'Lahore, Pakistan',
-  github:      'muhammadharisarain',
-  githubUrl:   'https://github.com/muhammadharisarain',
-  linkedin:    'muhammadharisarain',
-  linkedinUrl: 'https://linkedin.com/in/muhammadharisarain',
+  name:        personalInfo.name,
+  title:       personalInfo.title,
+  phone:       personalInfo.phone,
+  email:       personalInfo.email,
+  location:    personalInfo.location,
+  github:      personalInfo.github.replace('https://github.com/', ''),
+  githubUrl:   personalInfo.github,
+  linkedin:    personalInfo.linkedin.replace('https://linkedin.com/in/', ''),
+  linkedinUrl: personalInfo.linkedin,
 
-  summary:
-    'MERN Stack Specialist and Full-Stack Developer with 4+ years delivering production web platforms across healthcare, fintech, retail, entertainment, and AI-agent domains. Primary engineer on 7 products and contributor on 10+, with 400+ REST/GraphQL endpoints authored. Strong in Node.js, NestJS, React, Next.js (App Router, SSR/ISR), PostgreSQL, MongoDB, and Redis — plus OAuth 2.0, microservices, and AI-augmented workflows on Claude Code and MCP servers.',
+  summary: resumeSummary,
 
-  experience: [
-    {
-      title:   'Full-Stack Developer',
-      company: 'XISLABS',
-      period:  'Oct 2022 – Present',
-      bullets: [
-        'Progressed from Junior Backend Engineer (Oct 2022) to Full-Stack / MERN Developer — now primary engineer on 7 production products and contributor on 10+ across healthcare, retail, Web3, entertainment, and AI-agent platforms.',
-        'Authored 400+ REST and GraphQL endpoints in Node.js, Express, and NestJS — securing traffic with JWT and OAuth 2.0, and integrating Stripe, Moyasar (Saudi), Twilio, AWS S3, Azure, and Firebase.',
-        'Reduced p95 query latency from ~800ms to ~280ms (≈65% improvement) on Fatoraty and Tamam via Redis caching layers and composite PostgreSQL / MongoDB indexing.',
-        'Engineered Firmament — a 7-agent AI platform where the "Altitude" orchestrator generates work orders and delegates planning, development, review, and deployment to specialized agents running on Claude Code and MCP servers; integrated Anthropic, OpenAI, and Gemini APIs across client products.',
-        'Built real-time multiplayer systems (Socket.io, WebRTC, Redis) — including the Korean-market Karaoke platform that pairs with physical karaoke machines for live pitch scoring and 1-vs-1 / 1-vs-many battle modes.',
-        'Shipped React and Next.js (App Router, SSR/ISR) interfaces on Fatoraty, Tamam, Dentbird, and Karaoke — optimizing bundle size via code-splitting and dynamic imports, and measurably lifting Lighthouse scores on key user flows.',
-        'Containerized services with Docker and built GitHub Actions CI/CD pipelines across Fatoraty, Tamam, and Karaoke — deploying to AWS (EC2, S3, Lambda), Azure, Digital Ocean, and Vercel.',
-        'Mentored 3 junior engineers through structured code reviews and pair programming on a Jira + Kanban workflow with daily stand-ups, cutting onboarding from 4 weeks to 2.',
-      ],
-    },
-  ],
+  experience: experiences.map((e) => ({
+    title:   e.title,
+    company: e.company,
+    period:  e.period.replace(' - ', ' – '),
+    bullets: e.achievements,
+  })),
 
-  education: [
-    {
-      degree:      'BS Computer Science',
-      institution: 'Virtual University of Pakistan',
-      period:      '2022 – Feb 2026',
-    },
-    {
-      degree:      'Intermediate — Pre-Engineering (FSc)',
-      institution: 'Superior College of Science, Hyderabad',
-      period:      'Completed 2022',
-    },
-  ],
+  education,
 
+  // Kept literal: skillCategories in data.ts carries UI-only fields (lucide-react
+  // icon components, hex colors, proficiency levels) that must not be pulled into
+  // the PDF bundle — importing them would break the server-side render.
   skills: {
     frontend:     ['React.js', 'Next.js', 'TypeScript', 'JavaScript (ES6+)', 'Tailwind CSS', 'Redux', 'Framer Motion'],
     backend:      ['Node.js', 'NestJS', 'Express', 'REST APIs', 'GraphQL', 'Socket.io', 'WebRTC', 'Microservices'],
@@ -295,50 +282,12 @@ const cv = {
     workflow:     ['Jest', 'Vitest', 'Agile / Kanban', 'Jira', 'Confluence', 'Git'],
   },
 
-  projects: [
-    {
-      title:    'Dentbird',
-      category: 'Healthcare / Multi-platform SaaS',
-      desc:     'Dental workflow SaaS across three roles — clinics, labs, and admin. Clinics place orders with patient info and interactive SVG tooth-chart selection; labs get real-time notifications, prepare solutions from 3D images, and route back for clinic approval before shipping.',
-      tech:     ['React', 'Node.js', 'PostgreSQL', 'Socket.io', 'AWS'],
-    },
-    {
-      title:    'Firmament',
-      category: 'AI Agent Orchestration',
-      desc:     '7-agent system orchestrated by "Altitude" — a planning agent that issues work orders to specialized build, review, and deploy agents running on Claude Code and MCP servers for end-to-end feature delivery.',
-      tech:     ['Claude Code', 'MCP', 'TypeScript', 'Node.js', 'Anthropic API'],
-    },
-    {
-      title:    'Karaoke System',
-      category: 'Entertainment (Korea) — HW + SW',
-      desc:     'Companion platform to physical karaoke machines deployed in Korea — captures hardware performance data and renders real-time pitch scoring with 1-vs-1 and 1-vs-many battle modes, powered by Socket.io + Redis live leaderboards.',
-      tech:     ['React', 'Node.js', 'WebRTC', 'Socket.io', 'Redis'],
-    },
-    {
-      title:    'Tamam',
-      category: 'Form Management',
-      desc:     'Dynamic form platform with drag-and-drop builder, conditional logic, workflow automation, and analytics — processing 50K+ monthly submissions.',
-      tech:     ['React', 'Node.js', 'PostgreSQL', 'Socket.io'],
-    },
-    {
-      title:    'Fatoraty',
-      category: 'Retail POS',
-      desc:     'POS and back-office suite — inventory, live transactions, thermal-printer receipts, and multi-branch analytics — deployed across 5+ retail locations.',
-      tech:     ['React', 'Node.js', 'MongoDB', 'AWS', 'Redux'],
-    },
-    {
-      title:    'Wayfellow',
-      category: 'Social / Networking',
-      desc:     'Professional networking platform with job posts, events, real-time DMs, and a feed — 10K+ users on a Node.js + Socket.io backend with AWS media pipeline.',
-      tech:     ['React', 'Node.js', 'MongoDB', 'Socket.io', 'AWS'],
-    },
-    {
-      title:    'Campaign Estimator',
-      category: 'Marketing Analytics',
-      desc:     'Marketing tool forecasting campaign reach, conversions, and ROI — used by 3 enterprise clients to plan 100+ campaigns.',
-      tech:     ['React', 'TypeScript', 'Node.js', 'Chart.js'],
-    },
-  ],
+  projects: projects.map((p) => ({
+    title:    p.title,
+    category: p.category,
+    desc:     p.description,
+    tech:     p.tags.slice(0, 5),
+  })),
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
