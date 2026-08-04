@@ -23,12 +23,21 @@ There are no tests in this project.
 - `src/components/sections/` — One component per portfolio section (Hero, About, Skills, Experience, Projects, Contact, Navbar, Footer). Barrel-exported via `index.ts`.
 - `src/components/ui/` — Reusable primitives (Button, Card, SectionHeading, AnimatedCounter, SkillTag). Barrel-exported via `index.ts`.
 - `src/lib/data.ts` — **Single source of truth** for all portfolio content (personal info, skills, experience, projects, nav links). Both the portfolio UI and the PDF CV document consume this file.
-- `src/lib/cv-document.tsx` — React PDF template rendered by `@react-pdf/renderer`.
-- `src/app/cv/` — Dedicated CV page with download button and toolbar.
+- `src/lib/cv-document.tsx` — React PDF template rendered by `@react-pdf/renderer`. Imports its content from `data.ts`.
+- `src/app/resume/` — Web resume page. `/cv` permanently redirects here (see `next.config.js`).
+- `src/components/resume/` — One component per resume section, barrel-exported via `index.ts`. Each reads `data.ts` directly and takes no props.
 
 ### Data Flow
 
-All content lives in `src/lib/data.ts`. To update any portfolio information (name, skills, projects, experience), edit that file — no other files need to change.
+All content lives in `src/lib/data.ts`. To update any portfolio information (name, skills, projects, experience, education), edit that file — no other files need to change.
+
+This is enforced, not aspirational: the homepage, `src/app/resume/`, and `src/lib/cv-document.tsx` (the PDF) all import from `data.ts`. Do not reintroduce a local copy of CV content in a component — the three previously diverged, and the `/cv` page ended up showing a year-old job title.
+
+`certifications` is intentionally an empty array; `ResumeEducation` hides that block while it is empty. Add entries to `data.ts` to make it appear — no component change needed.
+
+### Fonts
+
+Three families, each with a job: Space Grotesk (`font-display`) for headings, Inter (`font-sans`) for body, JetBrains Mono (`font-mono`) for dates, metric numerals, and tech tags. All registered in `src/app/layout.tsx` and `tailwind.config.ts`.
 
 ### PDF Generation
 

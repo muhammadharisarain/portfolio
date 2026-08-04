@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import { navLinks } from '@/lib/data'
+import { navLinks, personalInfo } from '@/lib/data'
 import { cn } from '@/lib/utils'
 
 export default function Navbar() {
@@ -99,6 +99,23 @@ export default function Navbar() {
             ))}
           </ul>
 
+          {/* Route links — plain anchors, not handleNavClick targets, which
+              does querySelector() for in-page hash scrolling. */}
+          <div className="hidden md:flex items-center gap-5">
+            <a
+              href="/resume"
+              className="text-sm font-medium text-gray-300 transition-colors hover:text-primary"
+            >
+              Resume
+            </a>
+            <a
+              href={`mailto:${personalInfo.email}`}
+              className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-background transition-opacity hover:opacity-90"
+            >
+              Hire Me
+            </a>
+          </div>
+
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -155,6 +172,22 @@ export default function Navbar() {
                     </a>
                   </motion.li>
                 ))}
+                <li>
+                  <a
+                    href="/resume"
+                    className="block rounded-lg px-4 py-3 text-lg font-medium text-gray-300 transition-all duration-300 hover:bg-white/5 hover:text-white"
+                  >
+                    Resume
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`mailto:${personalInfo.email}`}
+                    className="mt-2 block rounded-lg bg-primary px-4 py-3 text-center text-lg font-semibold text-background"
+                  >
+                    Hire Me
+                  </a>
+                </li>
               </ul>
             </motion.div>
           </motion.div>
